@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using AddonMaster.Core.Data.Entities;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,22 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+
+            var list = new List<Addon>();
+            for (int i = 0; i < 10; i++)
+            {
+                if(i % 2 == 0)
+                {
+
+                list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png", Patch = "8.0.1" });
+                }
+                else
+                {
+                    list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\UpdatedScript_16x.png", Patch = "8.0.1" });
+                }
+            }
+
+            lbAddonList.ItemsSource = list;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -45,21 +62,6 @@ namespace WpfApp1
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-        }
-
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-            (sender as Image).Source = new BitmapImage(new Uri(@"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_16x.png"));
-        }
-
-        private void Image_MouseLeave(object sender, MouseEventArgs e)
-        {
-            (sender as Image).Source = new BitmapImage(new Uri(@"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

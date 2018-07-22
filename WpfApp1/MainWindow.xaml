@@ -8,8 +8,8 @@
         BorderThickness="2"
         mc:Ignorable="d"
         
-         Title="Your Collection" ShowMinButton="False" ShowCloseButton="False"  TitleForeground="DarkGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
-    <Grid  Height="400" Width="400" >
+         Title="Your Collection" ShowMinButton="True" Background="Black" ShowCloseButton="True" TitleForeground="DarkGray" SizeToContent="WidthAndHeight" ShowTitleBar="True" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+    <Grid  Height="500" Width="400" >
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="Close" Click="MenuItem_Click">
@@ -27,6 +27,41 @@
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore4.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Image MouseDown="Image_MouseDown" MouseLeave="Image_MouseLeave" MouseEnter="Image_MouseEnter" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png" Margin="368,368,5,5" RenderTransformOrigin="0.395,-0.08"></Image>
+        <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,36" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2" Background="LightGray" Opacity="0.8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <Image Height="20" Grid.Column="0" Source="{Binding ImagePath}" ToolTip="{Binding Description}"></Image>
+                        <Label Grid.Column="1"></Label>
+                        <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center"  Grid.Column="3" Text="{Binding Patch}" />
+                        <Image Grid.Column="4" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\UpdatedScript_16x.png"/>
+                        <Image Grid.Column="5" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Close_16x.png"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Image Margin="368,466,5,3" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"></Image>
     </Grid>
 </Controls:MetroWindow>
+<!--<Image Grid.Column="5" -->
+<!--Height="20">
+    <Image.Style>
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Source" Value="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Close_16x.png"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Source" Value="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\close_yellow.png"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Image.Style>
+</Image>-->

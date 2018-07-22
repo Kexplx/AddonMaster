@@ -100,6 +100,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -115,13 +116,19 @@
     <None Include="Resources\Add_grey_16x.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Close_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Minimize_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddonMaster.Core\AddonMaster.Core.csproj">
+      <Project>{05E4C794-631A-4B1C-A6E9-5976969EF65D}</Project>
+      <Name>AddonMaster.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdatedScript_16x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

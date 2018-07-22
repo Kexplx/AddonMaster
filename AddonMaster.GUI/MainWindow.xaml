@@ -7,34 +7,47 @@
         BorderBrush="Black"
         BorderThickness="2"
         mc:Ignorable="d"
-        Title="Your Collection" TitleForeground="DarkGray" Height="400" Width="400" ResizeMode="CanMinimize"  WindowStartupLocation="CenterScreen" ShowTitleBar="False" MouseDown="Window_MouseDown" >
-    <Grid>
+         Title="Your Addon Collection" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+    <Grid  Height="500" Width="400" >
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Close" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Minimize" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Minimize_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore4.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,36" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2">
+                    <Grid Margin="0,2" Background="LightGray" Opacity="0.8">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="50" />
-                            <ColumnDefinition Width="10" />
-                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="30" />
                         </Grid.ColumnDefinitions>
-                        <Image Height="20" Grid.Column="0" Source="{Binding IconPath}"></Image>
+                        <Image Height="20" Grid.Column="0" Source="{Binding ImagePath}" ToolTip="{Binding Description}"></Image>
                         <Label Grid.Column="1"></Label>
-                        <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Title}" />
-                        <Button Click="Button_Click" Grid.Column="3">Remove</Button>
-                        <Label Grid.Column="4"></Label>
-                        <Button Click="Button_Click" Grid.Column="5">Update</Button>
+                        <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center"  Grid.Column="3" Text="{Binding Patch}" />
+                        <Image Grid.Column="4" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\UpdatedScript_16x.png"/>
+                        <Image Grid.Column="5" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button  Background="LightGray" Name="BtnContinue" BorderThickness="0" Click="BtnContinue_Click" Content="New Addon" HorizontalAlignment="Left" Margin="307,337,0,0" VerticalAlignment="Top" Width="73" Height="20"/>
-        <Button  Background="LightGray" x:Name="BtnContinue_Copy" BorderThickness="0" Click="BtnContinue_Click" Content="Help" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Width="73" Height="20"/>
+        <Image Margin="370,467,3,2" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Add_grey_16x.png"></Image>
     </Grid>
 </Controls:MetroWindow>

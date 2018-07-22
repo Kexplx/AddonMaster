@@ -23,6 +23,17 @@ c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMas
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\ControlzEx.pdb
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.pdb
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.xml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddAddonWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddAddonWindow.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\App.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI_MarkupCompile.cache
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.g.resources
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.GenerateResource.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.exe.config
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.exe
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.pdb
@@ -34,16 +45,7 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.Co
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\ControlzEx.pdb
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.pdb
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.xml
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csprojAssemblyReference.cache
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.baml
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.baml
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\App.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI_MarkupCompile.cache
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.g.resources
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.Properties.Resources.resources
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.GenerateResource.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.exe

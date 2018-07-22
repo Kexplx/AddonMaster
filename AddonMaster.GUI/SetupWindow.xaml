@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         BorderBrush="Black"
         BorderThickness="2"
-        Title="Setup Directory" TitleForeground="DarkGray" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" ShowTitleBar="False" MouseDown="Window_MouseDown">
+        Title="Setup Directory" TitleForeground="LightGray" Background="Black" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False"  MouseDown="Window_MouseDown">
     <Grid Height="150" Width="370">
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore3.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Button  Background="LightGray" Name="BtnContinue" BorderThickness="0" Click="BtnContinue_Click" Content="Next" HorizontalAlignment="Left" Margin="317,125,0,0" VerticalAlignment="Top" Width="48" Height="20"/>
-        <Button  BorderThickness="0" Name="BtnOpenDialogue" Click="BtnOpenFolderDialogue_Click" Content=":" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top" Width="17"/>
+        <Button  Background="LightGray" Name="BtnContinue" BorderThickness="0" Click="BtnContinue_Click" Content="Next" HorizontalAlignment="Left" Margin="316,125,0,0" VerticalAlignment="Top" Width="48" Height="20"/>
+        <Button  BorderThickness="0" Name="BtnOpenDialogue" Click="BtnOpenFolderDialogue_Click" Content=":" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top" Width="17" Height="19"/>
         <TextBox BorderThickness="0" Background="LightGray" Name="TxtPath" IsReadOnly="True" Foreground="Gray" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="19" Margin="25,60,0,0" TextWrapping="Wrap" Text="Select addon folder..." VerticalAlignment="Top" Width="339"/>
         <Border Name="LblStatus" BorderThickness="1" BorderBrush="Gray" Margin="113,80,60,5" Visibility="Collapsed">
             <TextBox  BorderThickness="0" Background="LightGray"  IsReadOnly="True" Foreground="IndianRed" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="19" Margin="0" TextWrapping="Wrap" Text="Please selected valid directory" VerticalAlignment="Top" Width="177"/>

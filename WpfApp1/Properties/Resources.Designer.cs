@@ -63,16 +63,6 @@ namespace WpfApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Add_16x {
-            get {
-                object obj = ResourceManager.GetObject("Add_16x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Add_grey_16x {
             get {
                 object obj = ResourceManager.GetObject("Add_grey_16x", resourceCulture);
@@ -96,6 +86,16 @@ namespace WpfApp1.Properties {
         internal static System.Drawing.Bitmap Minimize_16x {
             get {
                 object obj = ResourceManager.GetObject("Minimize_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UpdatedScript_16x {
+            get {
+                object obj = ResourceManager.GetObject("UpdatedScript_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

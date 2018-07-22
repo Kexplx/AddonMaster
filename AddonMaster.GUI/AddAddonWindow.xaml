@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="Install Addon" SizeToContent="WidthAndHeight" ShowTitleBar="False" MouseDown="Window_MouseDown">
+                      mc:Ignorable="d"
+        Title="Install Addon" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" MouseDown="Window_MouseDown">
     <Grid Height="150" Width="370">
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore9.jpg" Stretch="UniformToFill"/>

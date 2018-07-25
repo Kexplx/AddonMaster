@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddonMaster.Core\AddonMaster.Core.csproj">
+      <Project>{05E4C794-631A-4B1C-A6E9-5976969EF65D}</Project>
+      <Name>AddonMaster.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

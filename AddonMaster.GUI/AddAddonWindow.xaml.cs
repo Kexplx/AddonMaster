@@ -1,47 +1,54 @@
-﻿using MahApps.Metro.Controls;
+﻿using AddonMaster.Core.Data;
+using MahApps.Metro.Controls;
 using System.ComponentModel;
-using System.Threading;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace AddonMaster.GUI
 {
     public partial class AddAddonWindow : MetroWindow
     {
-        public AddAddonWindow()
+        private MainWindow mainWindow;
+        private DatabaseManager dbManager;
+
+        private Regex downloadUrlRegex = new Regex(@"https:\/\/www\.curseforge\.com\/wow\/addons\/[^\/]*");
+
+        public AddAddonWindow(MainWindow mainWindow, DatabaseManager dbManager)
         {
             InitializeComponent();
-            StartBar();
+            this.dbManager = dbManager;
+            this.mainWindow = mainWindow;
         }
+
+        private void btnInstall_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.AddAddon(y.Argument as string, worker);
+            worker.ProgressChanged += (object x, ProgressChangedEventArgs y) => pb1.Value += y.ProgressPercentage;
+            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { mainWindow.CallbackWhenDownloadFinished(); Close(); };
+
+            worker.RunWorkerAsync(downloadUrlRegex.Match(txtUrl.Text).Value);
+        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 DragMove();
         }
 
-        private void StartBar()
+        private void txtUrl_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            var x = new BackgroundWorker();
-
-            x.WorkerReportsProgress = true;
-            x.DoWork += DoWork;
-            x.ProgressChanged += ProgressChanged;
-
-            x.RunWorkerAsync();
-            x.RunWorkerCompleted += (object sender, RunWorkerCompletedEventArgs e) => Close();
-        }
-
-        private void DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 0; i < 100; i++)
+            if (!downloadUrlRegex.IsMatch(txtUrl.Text))
             {
-                Thread.Sleep(100);
-                (sender as BackgroundWorker).ReportProgress(1);
+                txtValidUrl.Visibility = System.Windows.Visibility.Visible;
+                btnInstall.IsEnabled = false;
             }
-        }
-
-        private void ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            pb1.Value += e.ProgressPercentage;
+            else
+            {
+                txtValidUrl.Visibility = System.Windows.Visibility.Collapsed;
+                btnInstall.IsEnabled = true;
+            }
         }
     }
 }

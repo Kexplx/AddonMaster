@@ -179,5 +179,35 @@
   <ItemGroup>
     <Resource Include="Resources\UpdatedScript_16x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove8.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

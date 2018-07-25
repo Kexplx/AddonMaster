@@ -4,15 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:local="clr-namespace:WpfApp1"
-        mc:Ignorable="d"
-        Title="Install new addon" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="True" MouseDown="Window_MouseDown">
+                      mc:Ignorable="d"
+        Title="Install new addon" TitleForeground="LightGray" ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ShowTitleBar="False" MouseDown="Window_MouseDown">
     <Grid Height="150" Width="370">
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore9.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <TextBox BorderThickness="0"  Width="355" Background="LightGray"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchTermTextBox" Margin="10,57,0,75"/>
-        <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="14,57,0,77" Foreground="DarkGray" Width="300">
+        <TextBlock Name="xd1" IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="14,57,0,77" Foreground="DarkGray" Width="300">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -24,7 +23,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button BorderThickness="0"  Background="LightGray" x:Name="BtnContinue" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="20" Margin="317,125,0,0"/>
-        <ProgressBar Name="pb1" Value="0" Foreground="MidnightBlue"  HorizontalAlignment="Left" Height="10" Margin="10,78,0,0" VerticalAlignment="Top" Width="355"/>
+        <Button IsEnabled="False" BorderThickness="0"  Background="LightGray" x:Name="BtnContinue" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="20" Margin="317,124,0,0"/>
+        <ProgressBar x:Name="pb2" Value="0" Foreground="DarkSalmon"  HorizontalAlignment="Left" Height="10" Margin="10,79,0,0" VerticalAlignment="Top" Width="355"/>
     </Grid>
 </Controls:MetroWindow>

@@ -29,10 +29,10 @@ namespace WpfApp1
             var list = new List<Addon>();
             for (int i = 0; i < 10; i++)
             {
-                if(i % 2 == 0)
+                if (i % 2 == 0)
                 {
 
-                list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png", Patch = "8.0.1" });
+                    list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png", Patch = "8.0.1" });
                 }
                 else
                 {
@@ -49,21 +49,6 @@ namespace WpfApp1
                 DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as MenuItem).Header.ToString() == "Close")
@@ -74,6 +59,27 @@ namespace WpfApp1
             {
                 WindowState = WindowState.Minimized;
             }
+        }
+
+        private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //get download url from addon, open AddAddonWindow with the url in consturctor
+        }
+
+        private void imgRemove_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void imgAdd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+                Close();
         }
     }
 }

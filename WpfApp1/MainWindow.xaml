@@ -8,7 +8,7 @@
         BorderThickness="2"
         mc:Ignorable="d"
         
-         Title="Your Collection" ShowMinButton="True" Background="Black" ShowCloseButton="True" TitleForeground="DarkGray" SizeToContent="WidthAndHeight" ShowTitleBar="True" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+         Title="Your Collection" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" ShowMinButton="False" Background="Black" ShowCloseButton="False" TitleForeground="DarkGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
     <Grid  Height="500" Width="400" >
         <Grid.ContextMenu>
             <ContextMenu>
@@ -27,7 +27,7 @@
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore4.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,36" Background="Transparent">
+        <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,150" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2" Background="LightGray" Opacity="0.8">
@@ -43,13 +43,23 @@
                         <Label Grid.Column="1"></Label>
                         <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Name}" />
                         <TextBlock VerticalAlignment="Center"  Grid.Column="3" Text="{Binding Patch}" />
-                        <Image Grid.Column="4" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\UpdatedScript_16x.png"/>
-                        <Image Grid.Column="5" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Close_16x.png"/>
+                        <Image Cursor="Hand" Name="imgUpdate" MouseDown="imgUpdate_MouseDown" Grid.Column="4" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\UpdatedScript_16x.png"/>
+                        <Image Cursor="Hand" Name="imgRemove" MouseDown="imgRemove_MouseDown" Grid.Column="5" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Close_16x.png"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Margin="368,466,5,3" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"></Image>
+        <Image Name="imgAdd" MouseDown="imgAdd_MouseDown" Cursor="Hand" Margin="368,466,5,3" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"></Image>
+        <Label Background="LightGray" Margin="0,0,136,115"></Label>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update5.png" Margin="78,291,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update1.png" Margin="104,355,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update4.png" Margin="43,355,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update3.png" Margin="156,355,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update2.png" Margin="133,396,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="36" Width="31" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\remove8.png" Margin="111,289,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\delete1.png" Margin="63,445,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="37" Width="39" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\add_circle_grey_192x192.png" Margin="329,463,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.733,2.017"/>
+
     </Grid>
 </Controls:MetroWindow>
 <!--<Image Grid.Column="5" -->

@@ -5,25 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-        Title="Install Addon" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" MouseDown="Window_MouseDown">
+        Title="Install Addon" WindowStartupLocation="CenterScreen" Topmost="True" Background="Black" TitleForeground="LightGray" ResizeMode="NoResize" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" MouseDown="Window_MouseDown">
     <Grid Height="150" Width="370">
         <Grid.Background>
             <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore9.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <TextBox BorderThickness="0"  Width="355" Background="LightGray"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="SearchTermTextBox" Margin="10,57,0,75"/>
+        <TextBox TextChanged="txtUrl_TextChanged" BorderThickness="0"  Width="355" Background="LightGray"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtUrl" Margin="10,57,0,75"/>
         <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="14,57,0,77" Foreground="DarkGray" Width="300">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                        <DataTrigger Binding="{Binding Text, ElementName=txtUrl}" Value="">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button BorderThickness="0"  Background="LightGray" x:Name="BtnContinue" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="20" Margin="317,125,0,0"/>
-        <ProgressBar Name="pb1" Value="0" Foreground="MidnightBlue"  HorizontalAlignment="Left" Height="10" Margin="10,78,0,0" VerticalAlignment="Top" Width="355"/>
+        <Button IsEnabled="False" Name="btnInstall" Click="btnInstall_Click" BorderThickness="0"  Background="LightGray" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="20" Margin="317,125,0,0"/>
+        <ProgressBar Name="pb1" Value="0" Foreground="DarkSalmon" HorizontalAlignment="Left" Height="10" Margin="10,78,0,0" VerticalAlignment="Top" Width="355"/>
+        <TextBox Name="txtValidUrl" Visibility="Collapsed" BorderThickness="0" Background="LightGray"  IsReadOnly="True" VerticalContentAlignment="Center" Foreground="IndianRed" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="20" Margin="192,125,0,0" TextWrapping="Wrap" Text="Please copy valid URL" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Controls:MetroWindow>

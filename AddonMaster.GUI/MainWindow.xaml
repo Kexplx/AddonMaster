@@ -7,7 +7,7 @@
         BorderBrush="Black"
         BorderThickness="2"
         mc:Ignorable="d"
-         Title="Your Addon Collection" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+         Title="Your Addon Collection" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
     <Grid  Height="500" Width="400" >
         <Grid.ContextMenu>
             <ContextMenu>
@@ -29,7 +29,7 @@
         <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,36" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2" Background="LightGray" Opacity="0.8">
+                    <Grid Margin="0,2" Background="LightGray" Opacity="0.9">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
@@ -38,16 +38,17 @@
                             <ColumnDefinition Width="30" />
                             <ColumnDefinition Width="30" />
                         </Grid.ColumnDefinitions>
-                        <Image Height="20" Grid.Column="0" Source="{Binding ImagePath}" ToolTip="{Binding Description}"></Image>
+                        <Image Height="30" Grid.Column="0" Source="{Binding ImagePath}" ToolTip="{Binding Description}"></Image>
                         <Label Grid.Column="1"></Label>
                         <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Name}" />
                         <TextBlock VerticalAlignment="Center"  Grid.Column="3" Text="{Binding Patch}" />
-                        <Image Grid.Column="4" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\UpdatedScript_16x.png"/>
-                        <Image Grid.Column="5" Height="20" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"/>
+                        <Image Name="imgUpdate" Cursor="Hand" MouseDown="imgUpdate_MouseDown" Grid.Column="4" Height="25" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\update5.png"/>
+                        <Image Name="imgRemove" Cursor="Hand" MouseDown="imgRemove_MouseDown" Grid.Column="5" Height="28" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\remove8.png"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Margin="370,467,3,2" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Add_grey_16x.png"></Image>
+        <Image Name="imgAdd" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="370,467,3,2" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Add_grey_16x.png"></Image>
+        <Label Name="Ayylmao" Content="Label" HorizontalAlignment="Left" Margin="113,464,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,-0.423"/>
     </Grid>
 </Controls:MetroWindow>

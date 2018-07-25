@@ -113,29 +113,19 @@ namespace AddonMaster.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lore6 {
-            get {
-                object obj = ResourceManager.GetObject("lore6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap lore7 {
-            get {
-                object obj = ResourceManager.GetObject("lore7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lore9 {
             get {
                 object obj = ResourceManager.GetObject("lore9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove8 {
+            get {
+                object obj = ResourceManager.GetObject("remove8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -147,6 +137,16 @@ namespace AddonMaster.GUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("Sylvanas_Icecrown_7331", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update5 {
+            get {
+                object obj = ResourceManager.GetObject("update5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -3,7 +3,7 @@
 namespace AddonMaster.Core.Data
 {
     /// <summary>
-    /// The Config saves the folder where the addons will be saved in, it's located in the /bin/config.txt
+    /// The Config saves the folder's path where the addons will be saved in, it's located in the /bin/config.txt
     /// </summary>
     public class ConfigHandler
     {
@@ -15,6 +15,7 @@ namespace AddonMaster.Core.Data
             {
                 var writer = new StreamWriter(stream);
                 writer.WriteLine(addonFolder);
+                writer.Close();
             }
         }
 

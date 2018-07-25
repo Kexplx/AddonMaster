@@ -9,3 +9,4 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\Debug\AddonMaster.C
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csprojAssemblyReference.cache

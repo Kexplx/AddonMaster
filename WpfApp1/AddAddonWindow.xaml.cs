@@ -58,7 +58,7 @@ namespace WpfApp1
 
         private void ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            pb1.Value += e.ProgressPercentage;
+            pb2.Value += e.ProgressPercentage;
         }
     }
 }

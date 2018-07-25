@@ -11,3 +11,7 @@ C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
 C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\bin\Debug\AddonMaster.Core.dll
+C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\bin\Debug\AddonMaster.Core.pdb
+C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\AddonMaster\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete

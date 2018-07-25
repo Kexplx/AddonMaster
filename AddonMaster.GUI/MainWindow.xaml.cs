@@ -1,10 +1,11 @@
 ﻿using AddonMaster.Core.Data;
+using AddonMaster.Core.Data.Entities;
 using MahApps.Metro.Controls;
-using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace AddonMaster.GUI
 {
@@ -13,11 +14,13 @@ namespace AddonMaster.GUI
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private DatabaseManager dbManager;
+
         public MainWindow(string addonFolderPath)
         {
             InitializeComponent();
 
-            var dbManager = new DatabaseManager(addonFolderPath);
+            dbManager = new DatabaseManager(addonFolderPath);
             lbAddonList.ItemsSource = dbManager.GetAddons();
         }
 
@@ -34,15 +37,33 @@ namespace AddonMaster.GUI
                 DragMove();
         }
 
-        #region UI
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
+        private void imgAdd_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            (sender as Image).Source = new BitmapImage(new Uri(@"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_16x.png"));
+            new AddAddonWindow(this, dbManager).Show();
         }
 
-        private void Image_MouseLeave(object sender, MouseEventArgs e)
+        public void CallbackWhenDownloadFinished()
         {
-            (sender as Image).Source = new BitmapImage(new Uri(@"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"));
+            lbAddonList.ItemsSource = dbManager.GetAddons();
+            lbAddonList.Items.Refresh();
+        }
+
+        private void imgRemove_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //get download url from addon, open AddAddonWindow with the url in consturctor
+        }
+
+        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                Close();
+            }
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -56,6 +77,5 @@ namespace AddonMaster.GUI
                 WindowState = WindowState.Minimized;
             }
         }
-        #endregion
     }
 }

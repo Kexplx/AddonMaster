@@ -3,15 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-        Title="Install Addon" WindowStartupLocation="CenterScreen" Topmost="True" Background="Black" TitleForeground="LightGray" ResizeMode="NoResize" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" MouseDown="Window_MouseDown">
-    <Grid Height="150" Width="370">
-        <Grid.Background>
-            <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore9.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <TextBox TextChanged="txtUrl_TextChanged" BorderThickness="0"  Width="355" Background="LightGray"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtUrl" Margin="10,57,0,75"/>
-        <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="14,57,0,77" Foreground="DarkGray" Width="300">
+                      BorderBrush="DimGray"
+                      BorderThickness="1"
+                      Title="Install new addon" WindowState="Normal" TitleForeground="LightGray" ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ShowTitleBar="False" MouseDown="Window_MouseDown" Topmost="True">
+    <Grid Height="150" Width="370" Background="Black">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Close" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Minimize" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Minimize_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Border BorderThickness="1" BorderBrush="DarkGray" Margin="10,57,5,69" >
+            <TextBox Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="355" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Margin="0" Height="24"/>
+        </Border>
+        <TextBlock Name="xd1" IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,61,0,73" Foreground="Gray" Width="300">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -23,8 +39,16 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Button IsEnabled="False" Name="btnInstall" Click="btnInstall_Click" BorderThickness="0"  Background="LightGray" Content="Install" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="20" Margin="317,125,0,0"/>
-        <ProgressBar Name="pb1" Value="0" Foreground="DarkSalmon" HorizontalAlignment="Left" Height="10" Margin="10,78,0,0" VerticalAlignment="Top" Width="355"/>
-        <TextBox Name="txtValidUrl" Visibility="Collapsed" BorderThickness="0" Background="LightGray"  IsReadOnly="True" VerticalContentAlignment="Center" Foreground="IndianRed" BorderBrush="DarkGray" HorizontalAlignment="Left" Height="20" Margin="192,125,0,0" TextWrapping="Wrap" Text="Please copy valid URL" VerticalAlignment="Top" Width="120"/>
+        <ProgressBar Visibility="Hidden" x:Name="pb1" Value="0" Foreground="LightGreen" BorderThickness="0" Background="Transparent" Opacity="0.7" HorizontalAlignment="Left" Height="10" Margin="10,84,0,0" VerticalAlignment="Top" Width="355"/>
+        <fa:ImageAwesome Cursor="Hand" IsEnabled="False" Name="btnInstall" MouseDown="btnInstall_Click" Opacity="0.6" Icon="Download" Margin="332,120,4,5" Foreground="LightGreen"></fa:ImageAwesome>
+        <Label Content="Choose URL:" Foreground="LightGray" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBlock Margin="80,38,62,96">           
+                <Hyperlink Foreground="LightBlue" NavigateUri="https://www.curseforge.com/wow/addons" RequestNavigate="Hyperlink_RequestNavigate">
+                    https://www.curseforge.com/wow/addons
+                </Hyperlink>
+        </TextBlock>
+        <Label Visibility="Hidden" Content="Please enter valid URL" Name="lblStatus" Foreground="IndianRed" HorizontalAlignment="Left" Margin="204,124,0,0" VerticalAlignment="Top" Width="127"/>
+        <fa:ImageAwesome Icon="Cog" Name="spinner" Spin="True" Visibility="Collapsed" Foreground="LightSkyBlue" Opacity="0.8" SpinDuration="3"  Margin="258,120,5,4" >
+        </fa:ImageAwesome>
     </Grid>
 </Controls:MetroWindow>

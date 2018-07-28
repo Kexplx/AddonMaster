@@ -24,13 +24,6 @@ namespace AddonMaster.GUI
             lbAddonList.ItemsSource = dbManager.GetAddons();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-
-            //var todo = button.DataContext as TodoItem;
-        }
-
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -55,7 +48,9 @@ namespace AddonMaster.GUI
 
         private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //get download url from addon, open AddAddonWindow with the url in consturctor
+            var addon = (sender as Image).DataContext as Addon;
+
+            new AddAddonWindow(this, dbManager, addon).Show();
         }
 
         private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

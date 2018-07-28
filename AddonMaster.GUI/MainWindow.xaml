@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        BorderBrush="Black"
-        BorderThickness="2"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        BorderBrush="DarkGray"
+        BorderThickness="1"
         mc:Ignorable="d"
-         Title="Your Addon Collection" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+         Title="Your Addon Collection"  MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
     <Grid  Height="500" Width="400" >
         <Grid.ContextMenu>
             <ContextMenu>
@@ -23,13 +24,10 @@
                 </MenuItem>
             </ContextMenu>
         </Grid.ContextMenu>
-        <Grid.Background>
-            <ImageBrush Opacity="0.6" ImageSource="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\lore4.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
         <ListBox BorderThickness="0" Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,36" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2" Background="LightGray" Opacity="0.9">
+                    <Grid Margin="0,2" Background="LightGray" Opacity="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
@@ -40,15 +38,15 @@
                         </Grid.ColumnDefinitions>
                         <Image Height="30" Grid.Column="0" Source="{Binding ImagePath}" ToolTip="{Binding Description}"></Image>
                         <Label Grid.Column="1"></Label>
-                        <TextBlock VerticalAlignment="Center"  Grid.Column="2" Text="{Binding Name}" />
-                        <TextBlock VerticalAlignment="Center"  Grid.Column="3" Text="{Binding Patch}" />
-                        <Image Name="imgUpdate" Cursor="Hand" MouseDown="imgUpdate_MouseDown" Grid.Column="4" Height="25" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\update5.png"/>
-                        <Image Name="imgRemove" Cursor="Hand" MouseDown="imgRemove_MouseDown" Grid.Column="5" Height="28" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\remove8.png"/>
+                        <TextBlock VerticalAlignment="Center" Grid.Column="2" Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center" Grid.Column="3" Text="{Binding Patch}" />
+                        <fa:ImageAwesome Icon="Refresh" Name="imgUpdate" Grid.Column="4" Foreground="DarkSlateGray" Opacity="1" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Trash" Name="imgRemove" Grid.Column="5" Foreground="Maroon" Opacity="0.8" Cursor="Hand" Height="24" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Name="imgAdd" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="370,467,3,2" Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Add_grey_16x.png"></Image>
+        <fa:ImageAwesome Icon="PlusSquareOutline" Opacity="0.8" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="369,469,5,5" Foreground="LightGreen"></fa:ImageAwesome>
         <Label Name="Ayylmao" Content="Label" HorizontalAlignment="Left" Margin="113,464,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.421,-0.423"/>
     </Grid>
 </Controls:MetroWindow>

@@ -25,9 +25,6 @@ namespace WpfApp1
         public AddAddonWindow()
         {
             InitializeComponent();
-            StartBar();
-
-            
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -58,7 +55,13 @@ namespace WpfApp1
 
         private void ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            pb2.Visibility = Visibility.Visible;
             pb2.Value += e.ProgressPercentage;
+        }
+
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StartBar();
         }
     }
 }

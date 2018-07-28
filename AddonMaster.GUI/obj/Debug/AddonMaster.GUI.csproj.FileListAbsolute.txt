@@ -50,3 +50,5 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GU
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.exe
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\FontAwesome.WPF.dll
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\FontAwesome.WPF.xml

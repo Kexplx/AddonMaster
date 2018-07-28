@@ -1,4 +1,6 @@
-﻿namespace AddonMaster.Core.Data.Entities
+﻿using System.Collections.Generic;
+
+namespace AddonMaster.Core.Data.Entities
 {
     public class Addon
     {
@@ -33,6 +35,12 @@
         }
 
         public string DownloadUrl
+        {
+            get;
+            set;
+        }
+
+        public List<string> InstalledDirectories
         {
             get;
             set;

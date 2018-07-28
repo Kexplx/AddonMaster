@@ -121,32 +121,12 @@ namespace AddonMaster.GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap remove8 {
-            get {
-                object obj = ResourceManager.GetObject("remove8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Sylvanas_Icecrown_7331 {
             get {
                 object obj = ResourceManager.GetObject("Sylvanas_Icecrown_7331", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap update5 {
-            get {
-                object obj = ResourceManager.GetObject("update5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

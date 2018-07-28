@@ -15,46 +15,52 @@ namespace AddonMaster.GUI
             InitializeComponent();
         }
 
-        private void BtnOpenFolderDialogue_Click(object sender, RoutedEventArgs e)
-        {
-            using (var dialog = new WinForms.FolderBrowserDialog())
-            {
-                dialog.ShowDialog();
-                var result = dialog.SelectedPath;
-                TxtPath.Text = result;
-            }
-        }
-
-        private void BtnContinue_Click(object sender, RoutedEventArgs e)
-        {
-            var configHandler = new ConfigHandler();
-            configHandler.CreateOrUpdateConfig(TxtPath.Text);
-
-            new MainWindow(TxtPath.Text).Show();
-            Close();
-        }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-                DragMove();
-        }
-
         private void TxtPath_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!Directory.Exists((sender as TextBox).Text))
             {
                 try
                 {
-                    LblStatus.Visibility = Visibility.Visible;
-                    BtnContinue.IsEnabled = false;
+                    lblStatus.Visibility = Visibility.Visible;
+                    btnContinue.IsEnabled = false;
                 }
                 catch { }
             }
             else
             {
-                LblStatus.Visibility = Visibility.Collapsed;
-                BtnContinue.IsEnabled = true;
+                lblStatus.Visibility = Visibility.Collapsed;
+                btnContinue.IsEnabled = true;
+            }
+        }
+
+        private void btnOpenDirectoryDialogue_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            using (var dialog = new WinForms.FolderBrowserDialog())
+            {
+                dialog.ShowDialog();
+                var result = dialog.SelectedPath;
+                txtAddonFolderPath.Text = result;
+            }
+        }
+
+        private void btnContinue_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var configHandler = new ConfigHandler();
+            configHandler.CreateOrUpdateConfig(txtAddonFolderPath.Text);
+
+            new MainWindow(txtAddonFolderPath.Text).Show();
+            Close();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if ((sender as MenuItem).Header.ToString() == "Close")
+            {
+                Close();
+            }
+            else
+            {
+                WindowState = WindowState.Minimized;
             }
         }
     }

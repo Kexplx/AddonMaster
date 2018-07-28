@@ -40,6 +40,9 @@
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -165,49 +168,10 @@
     <None Include="Resources\lore10.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Add_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Add_grey_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Close_16x.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Minimize_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\UpdatedScript_16x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\update5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

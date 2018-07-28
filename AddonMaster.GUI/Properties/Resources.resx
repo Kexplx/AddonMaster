@@ -139,10 +139,4 @@
   <data name="lore9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lore9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="update5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\update5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="remove8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

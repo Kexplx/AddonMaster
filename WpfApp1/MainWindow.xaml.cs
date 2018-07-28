@@ -26,21 +26,6 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            var list = new List<Addon>();
-            for (int i = 0; i < 10; i++)
-            {
-                if (i % 2 == 0)
-                {
-
-                    list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png", Patch = "8.0.1" });
-                }
-                else
-                {
-                    list.Add(new Addon { Description = "Something something description", Name = "Bartender", ImagePath = @"C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\UpdatedScript_16x.png", Patch = "8.0.1" });
-                }
-            }
-
-            lbAddonList.ItemsSource = list;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

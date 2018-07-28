@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                       xmlns:fa="http://schemas.fontawesome.io/icons/"
         BorderBrush="Black"
         BorderThickness="2"
         mc:Ignorable="d"
@@ -49,17 +50,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Image Name="imgAdd" MouseDown="imgAdd_MouseDown" Cursor="Hand" Margin="368,466,5,3" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\Add_grey_16x.png"></Image>
-        <Label Background="LightGray" Margin="0,0,136,115"></Label>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update5.png" Margin="78,291,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update1.png" Margin="104,355,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update4.png" Margin="43,355,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update3.png" Margin="156,355,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\update2.png" Margin="133,396,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="36" Width="31" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\remove8.png" Margin="111,289,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="30" Width="30" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\delete1.png" Margin="63,445,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="37" Width="39" Source="C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\Resources\add_circle_grey_192x192.png" Margin="329,463,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.733,2.017"/>
-
+        <Label Background="LightGray" Margin="0,0,258,115"></Label>
+        <fa:ImageAwesome Cursor="Hand"  Icon="PlusSquare" Foreground="LightGray" Margin="368,467,6,1" RenderTransformOrigin="1.077,0.625"></fa:ImageAwesome>
+        <fa:ImageAwesome Cursor="Hand"  Icon="edit" Foreground="Black" Margin="76,342,298,126" RenderTransformOrigin="1.077,0.625"/>
+        <fa:ImageAwesome Cursor="Hand"  Icon="Trash" Foreground="Black" Margin="107,342,271,126" RenderTransformOrigin="1.077,0.625"/>
     </Grid>
 </Controls:MetroWindow>
 <!--<Image Grid.Column="5" -->

@@ -23,3 +23,5 @@ C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCom
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\bin\Debug\FontAwesome.WPF.dll
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\bin\Debug\FontAwesome.WPF.xml

@@ -1,6 +1,7 @@
 ﻿using AddonMaster.Core.Data.Entities;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            ExtractToDirectory(@"C:\Users\Oscar\Desktop\1.zip", @"C:\Users\Oscar\Desktop");
+            Brush x = Brushes.Red;
         }
 
         static void ExtractToDirectory(string sourceFileName, string destinationDirectoryName)

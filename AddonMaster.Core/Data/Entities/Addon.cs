@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace AddonMaster.Core.Data.Entities
 {
@@ -26,6 +28,23 @@ namespace AddonMaster.Core.Data.Entities
         {
             get;
             set;
+        }
+
+        public BitmapImage Image
+        {
+            get
+            {
+                var img = new BitmapImage();
+                using (var stream = File.OpenRead(ImagePath))
+                {
+                    img.BeginInit();
+                    img.CacheOption = BitmapCacheOption.OnLoad;
+                    img.StreamSource = stream;
+                    img.EndInit();
+                }
+
+                return img;
+            }
         }
 
         public string ImagePath

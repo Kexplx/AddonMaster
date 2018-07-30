@@ -4,12 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-                              xmlns:fa="http://schemas.fontawesome.io/icons/"
-        mc:Ignorable="d"
-        BorderBrush="DarkGray"
-        BorderThickness="1"
-        Title="Setup Directory" TitleForeground="LightGray" Background="Black" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False">
-    <Grid Height="150" Width="370">
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+            mc:Ignorable="d"
+            BorderBrush="DarkGray"
+            BorderThickness="1"
+            TitleForeground="LightGray" ResizeMode="NoResize" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" MouseDown="MetroWindow_MouseDown" 
+            Background="Black" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" 
+            ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False">
+    <Grid Height="150" Width="370" Background="Black">
         <Grid.ContextMenu>
             <ContextMenu>
                 <MenuItem Header="Close" Click="MenuItem_Click">
@@ -24,10 +26,10 @@
                 </MenuItem>
             </ContextMenu>
         </Grid.ContextMenu>
-        <Border BorderThickness="1" BorderBrush="DarkGray" Margin="25,57,5,69" >
-            <TextBox IsReadOnly="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" TextChanged="TxtPath_TextChanged" VerticalContentAlignment="Center" Width="355" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtAddonFolderPath" Margin="0" Height="24"/>
+        <Border BorderThickness="1" BorderBrush="DarkGray" Margin="30,67,5,59" >
+            <TextBox IsReadOnly="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" TextChanged="TxtPath_TextChanged" VerticalContentAlignment="Center" Width="335" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtAddonFolderPath" Margin="0" Height="24"/>
         </Border>
-        <TextBlock Name="xd1" IsHitTestVisible="False" Text="C:\Program Files (x86)\World of Warcraft\Interface\AddOns" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="26,61,0,73" Foreground="Gray" Width="339">
+        <TextBlock Name="xd1" IsHitTestVisible="False" Text="C:\Program Files (x86)\World of Warcraft\Interface\AddOns" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="34,71,0,63" Foreground="Gray" Width="331">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -39,9 +41,9 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <Label Content="Select install path" Foreground="LightGray" HorizontalAlignment="Left" Margin="20,34,0,0" VerticalAlignment="Top" Width="192"/>
-        <fa:ImageAwesome Cursor="Hand" Name="btnOpenDirectoryDialogue" MouseDown="btnOpenDirectoryDialogue_MouseDown" Icon="AngleDoubleUp" Foreground="LightGray" Margin="7,60,350,71" RenderTransformOrigin="0.5,0"></fa:ImageAwesome>
-        <fa:ImageAwesome IsEnabled="False" Cursor="Hand" Foreground="LightGreen" Opacity="0.6" x:Name="btnContinue" MouseDown="btnContinue_MouseDown" Icon="ArrowCircleRight" Margin="342,126,5,5" RenderTransformOrigin="0.5,0"/>
+        <fa:ImageAwesome Opacity="0.6" Cursor="Hand" Name="btnOpenDirectoryDialogue" MouseDown="btnOpenDirectoryDialogue_MouseDown" Icon="Bars" Foreground="LightGreen" Margin="2,67,344,59" RenderTransformOrigin="0.5,0"></fa:ImageAwesome>
+        <fa:ImageAwesome IsEnabled="False" Cursor="Hand" Foreground="LightGreen" Opacity="0.6" x:Name="btnContinue" MouseDown="btnContinue_MouseDown" Icon="SignIn" Margin="341,126,6,5" RenderTransformOrigin="0.5,0"/>
         <Label Name="lblStatus" Content="Please select valid path" Visibility="Collapsed" Foreground="IndianRed" HorizontalAlignment="Left" Margin="200,123,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label Background="Transparent" Content="Welcome!&#xA;This is a Program created to help you manage your WoW Addons.&#xA;&#xA;" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="371" Height="44" Margin="-1,0,0,0"/>
     </Grid>
 </Controls:MetroWindow>

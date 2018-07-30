@@ -23,6 +23,7 @@ namespace AddonMaster.GUI
                 {
                     lblStatus.Visibility = Visibility.Visible;
                     btnContinue.IsEnabled = false;
+                    btnContinue.Opacity = 0.6;
                 }
                 catch { }
             }
@@ -30,6 +31,7 @@ namespace AddonMaster.GUI
             {
                 lblStatus.Visibility = Visibility.Collapsed;
                 btnContinue.IsEnabled = true;
+                btnContinue.Opacity = 0.9;
             }
         }
 
@@ -52,6 +54,7 @@ namespace AddonMaster.GUI
             Close();
         }
 
+        #region UI
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             if ((sender as MenuItem).Header.ToString() == "Close")
@@ -63,5 +66,27 @@ namespace AddonMaster.GUI
                 WindowState = WindowState.Minimized;
             }
         }
+
+        private void MetroWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    DragMove();
+                }
+            }
+            catch { }
+        }
+
+        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                Close();
+            }
+        }
+
+        #endregion
     }
 }

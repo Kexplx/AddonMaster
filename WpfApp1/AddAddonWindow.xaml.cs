@@ -1,19 +1,9 @@
 ﻿using MahApps.Metro.Controls;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace WpfApp1
 {
@@ -46,22 +36,42 @@ namespace WpfApp1
 
         private void DoWork(object sender, DoWorkEventArgs e)
         {
-            for (int i = 0; i < 100; i++)
+
+            var x = 0;
+            while (x <= 7)
             {
-                Thread.Sleep(100);
-                (sender as BackgroundWorker).ReportProgress(1);
+                (sender as BackgroundWorker).ReportProgress(x++);
+                Thread.Sleep(1000);
             }
         }
 
+
         private void ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            pb2.Visibility = Visibility.Visible;
-            pb2.Value += e.ProgressPercentage;
+            var directory = new Dictionary<int, SolidColorBrush>
+                {
+                    {0, new SolidColorBrush(Colors.Red)},
+                    {1, new SolidColorBrush(Colors.LightSkyBlue)},
+                    {2, new SolidColorBrush(Colors.Orange)},
+                    {3, new SolidColorBrush(Colors.DarkOrange)},
+                    {4, new SolidColorBrush(Colors.Blue)},
+                    {5, new SolidColorBrush(Colors.SlateGray)},
+                    {6, new SolidColorBrush(Colors.DarkSalmon)},
+                };
+
+            cogs.Foreground = directory[e.ProgressPercentage];
         }
 
         private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
             StartBar();
         }
+
+        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+                Close();
+        }
+
     }
 }

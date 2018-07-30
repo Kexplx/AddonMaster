@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Sylvanas_Icecrown-7331.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Download %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -135,31 +135,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lore1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lore2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lore3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Sylvanas_Icecrown-7331.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lore4.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lore5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lore6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lore7.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lore8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lore9.jpg" />
@@ -172,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Minimize_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\front.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -61,21 +61,31 @@ namespace AddonMaster.GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Bitmap lore10 {
+        internal static System.Drawing.Icon Download__1_ {
             get {
-                object obj = ResourceManager.GetObject("lore10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Download__1_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon front {
+            get {
+                object obj = ResourceManager.GetObject("front", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lore2 {
+        internal static System.Drawing.Bitmap lore10 {
             get {
-                object obj = ResourceManager.GetObject("lore2", resourceCulture);
+                object obj = ResourceManager.GetObject("lore10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,30 +113,10 @@ namespace AddonMaster.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lore5 {
-            get {
-                object obj = ResourceManager.GetObject("lore5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap lore9 {
             get {
                 object obj = ResourceManager.GetObject("lore9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon Sylvanas_Icecrown_7331 {
-            get {
-                object obj = ResourceManager.GetObject("Sylvanas_Icecrown_7331", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
     }

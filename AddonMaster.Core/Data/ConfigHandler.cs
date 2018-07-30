@@ -7,7 +7,7 @@ namespace AddonMaster.Core.Data
     /// </summary>
     public class ConfigHandler
     {
-        private string configPath = "config.txt";
+        private string configPath = "config.xml";
 
         public void CreateOrUpdateConfig(string addonFolder)
         {

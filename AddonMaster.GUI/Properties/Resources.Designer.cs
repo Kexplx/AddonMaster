@@ -63,6 +63,36 @@ namespace AddonMaster.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon cogs1 {
+            get {
+                object obj = ResourceManager.GetObject("cogs1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon cogs2 {
+            get {
+                object obj = ResourceManager.GetObject("cogs2", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon cogs3 {
+            get {
+                object obj = ResourceManager.GetObject("cogs3", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon Download__1_ {
             get {
                 object obj = ResourceManager.GetObject("Download__1_", resourceCulture);
@@ -117,6 +147,16 @@ namespace AddonMaster.GUI.Properties {
             get {
                 object obj = ResourceManager.GetObject("lore9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon png_cogs_gears_07_54_11_march_2017_pluspng_com_png_hd_gears_cogs_600 {
+            get {
+                object obj = ResourceManager.GetObject("png_cogs_gears_07_54_11_march_2017_pluspng_com_png_hd_gears_cogs_600", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

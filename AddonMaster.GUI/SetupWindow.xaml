@@ -41,9 +41,9 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <fa:ImageAwesome Opacity="0.6" Cursor="Hand" Name="btnOpenDirectoryDialogue" MouseDown="btnOpenDirectoryDialogue_MouseDown" Icon="Bars" Foreground="LightGreen" Margin="2,67,344,59" RenderTransformOrigin="0.5,0"></fa:ImageAwesome>
+        <fa:ImageAwesome Opacity="0.7" Cursor="Hand" Name="btnOpenDirectoryDialogue" MouseDown="btnOpenDirectoryDialogue_MouseDown" Icon="FolderOpen" Foreground="LightGoldenrodYellow" Margin="3,67,343,59" RenderTransformOrigin="0.5,0"></fa:ImageAwesome>
         <fa:ImageAwesome IsEnabled="False" Cursor="Hand" Foreground="LightGreen" Opacity="0.6" x:Name="btnContinue" MouseDown="btnContinue_MouseDown" Icon="SignIn" Margin="341,126,6,5" RenderTransformOrigin="0.5,0"/>
         <Label Name="lblStatus" Content="Please select valid path" Visibility="Collapsed" Foreground="IndianRed" HorizontalAlignment="Left" Margin="200,123,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Background="Transparent" Content="Welcome!&#xA;This is a Program created to help you manage your WoW Addons.&#xA;&#xA;" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="371" Height="44" Margin="-1,0,0,0"/>
+        <Label Background="Transparent" Content="Welcome!&#xA;This Program was created to help you manage your WoW Addons.&#xA;&#xA;" Foreground="DarkGray" HorizontalAlignment="Left" VerticalAlignment="Top" Width="371" Height="44" Margin="-1,0,0,0"/>
     </Grid>
 </Controls:MetroWindow>

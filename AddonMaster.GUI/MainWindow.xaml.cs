@@ -86,6 +86,14 @@ namespace AddonMaster.GUI
             }
         }
 
+        private void imgReport_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var reportWindow = new ReportWindow();
+            reportWindow.Owner = this;
+
+            reportWindow.Show();
+        }
+
         #region UI Stuff
         private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

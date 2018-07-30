@@ -6,6 +6,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            Brush x = Brushes.Red;
+
         }
 
         static void ExtractToDirectory(string sourceFileName, string destinationDirectoryName)

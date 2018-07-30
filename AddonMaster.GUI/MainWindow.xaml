@@ -51,6 +51,6 @@
         <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="0.8" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
         <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the green button to install an addon" Foreground="DarkGray" FontSize="20" Margin="13,200,8,262"/>
         <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="333,469,31,5"></fa:ImageAwesome>
-        <fa:ImageAwesome Icon="Bug" Opacity="0.8" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
+        <fa:ImageAwesome Icon="Bug" Opacity="0.8" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
     </Grid>
 </Controls:MetroWindow>

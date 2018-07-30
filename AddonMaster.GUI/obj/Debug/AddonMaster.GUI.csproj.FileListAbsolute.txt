@@ -52,3 +52,5 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GU
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.pdb
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\FontAwesome.WPF.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\FontAwesome.WPF.xml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\ReportWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\ReportWindow.g.cs

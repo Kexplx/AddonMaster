@@ -1,0 +1,52 @@
+﻿<Controls:MetroWindow x:Class="AddonMaster.GUI.ReportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      mc:Ignorable="d"
+                      BorderBrush="DimGray"
+                      BorderThickness="1"
+                      MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" TitleForeground="LightGray" ShowCloseButton="False" ResizeMode="NoResize" 
+                      ShowMinButton="False" SizeToContent="WidthAndHeight" 
+                      WindowStartupLocation="CenterOwner" ShowTitleBar="False" MouseDown="Window_MouseDown">
+    <Grid Height="200" Width="370" Background="Black">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Close" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Minimize" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Minimize_16x.png"></Image>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Border BorderThickness="0,1,0,1" BorderBrush="DarkGray" Margin="0,30,0,29" >
+            <TextBox AcceptsReturn="True" CaretBrush="DarkGray" Foreground="DarkGray" MaxLength="1000" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" TextWrapping="Wrap" TextChanged="txtContent_TextChanged" VerticalContentAlignment="Top" Opacity="1" Width="370" Background="Transparent" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txtContent" Margin="0" Height="140"/>
+        </Border>
+        <TextBlock IsHitTestVisible="False" FontSize="20" Text="Leave your Feedback" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="84,83,0,91" Foreground="Gray" Width="203">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=txtContent}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsKeyboardFocused, ElementName=txtContent}" Value="true">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <CheckBox Name="checkboxBug" Checked="checkboxBug_Checked" Content="Bug Report" Background="DarkGray" Foreground="DarkGray" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="checkboxFeedback" Content="Feedback" Checked="checkboxFeedback_Checked" Background="DarkGray" Foreground="DarkGray" HorizontalAlignment="Left" Margin="84,10,0,0" VerticalAlignment="Top"/>
+        <fa:ImageAwesome Cursor="Hand" IsEnabled="True" x:Name="imgSend" ToolTip="Send the Feedback" MouseDown="imgSend_MouseDown" Opacity="0.6" Icon="Send" Margin="340,171,9,0" Foreground="LightSkyBlue"/>
+        <fa:ImageAwesome Icon="Cog" Name="spinner" Spin="True" Visibility="Collapsed" Foreground="LightGray" Opacity="0.8" SpinDuration="2"  Margin="307,174,30,4" />
+    </Grid>
+</Controls:MetroWindow>

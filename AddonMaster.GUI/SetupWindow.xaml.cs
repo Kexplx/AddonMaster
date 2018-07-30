@@ -86,7 +86,6 @@ namespace AddonMaster.GUI
                 Close();
             }
         }
-
         #endregion
     }
 }

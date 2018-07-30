@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\Download %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\cogs3.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -81,6 +81,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SetupWindow.xaml.cs">
       <DependentUpon>SetupWindow.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SetupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -163,6 +170,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Download %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogs1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogs2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogs3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-cogs-gears-07-54-11-march-2017-pluspng-com-png-hd-gears-cogs-600.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

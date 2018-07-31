@@ -23,9 +23,7 @@ c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMas
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\ControlzEx.pdb
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.pdb
 c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.xml
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.exe.config
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.exe
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.pdb
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.Core.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\ControlzEx.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\FontAwesome.WPF.dll
@@ -38,10 +36,12 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\MahApps.Metro.xml
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csprojAssemblyReference.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddAddonWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\InfoWindow.baml
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.baml
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\ReportWindow.baml
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.baml
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddAddonWindow.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\InfoWindow.g.cs
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\MainWindow.g.cs
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\ReportWindow.g.cs
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\SetupWindow.g.cs
@@ -51,8 +51,8 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GU
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.Properties.Resources.resources
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.GenerateResource.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CoreCompileInputs.cache
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.exe
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.pdb
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\InfoWindow.baml
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\InfoWindow.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.exe.config
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\bin\Debug\AddonMaster.GUI.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\Debug\AddonMaster.GUI.csproj.CopyComplete

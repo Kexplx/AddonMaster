@@ -110,9 +110,16 @@ namespace AddonMaster.GUI
             {
                 Close();
             }
-            else if((sender as Image).ToolTip as string == "Minimize")
+            else if ((sender as Image).ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
+            }
+            else if ((sender as Image).ToolTip as string == "Help")
+            {
+                new InfoWindow(this)
+                {
+                    Owner = this
+                }.Show();
             }
         }
     }

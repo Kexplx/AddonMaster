@@ -1,36 +1,34 @@
 ﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AddonMaster.GUI
 {
-    /// <summary>
-    /// Interaction logic for InfoWindow.xaml
-    /// </summary>
     public partial class InfoWindow : MetroWindow
     {
-        public InfoWindow()
+        public InfoWindow(MetroWindow window)
         {
-
             InitializeComponent();
+            switch (window)
+            {
+                case MainWindow x:
+                    txtMainWindow.Visibility = Visibility.Visible;
+                    break;
 
-            //switch (window)
-            //{
-            //    case MainWindow x:
+                case SetupWindow x:
+                    txtSetupWindow.Visibility = Visibility.Visible;
+                    break;
 
-            //        break;
-            //}
+                case AddAddonWindow x:
+                    txtAddAddonWindow.Visibility = Visibility.Visible;
+                    break;
+
+                case ReportWindow x:
+                    txtReportWindow.Visibility = Visibility.Visible;
+                    break;
+            }
         }
 
         #region UI
@@ -54,10 +52,5 @@ namespace AddonMaster.GUI
             }
         }
         #endregion
-
-        private void txtMainWindow_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

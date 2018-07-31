@@ -12,8 +12,15 @@ C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\bin\Debug\FontAwesome.WPF.xml
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\bin\Debug\MahApps.Metro.pdb
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\bin\Debug\MahApps.Metro.xml
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Child.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father1.g.cs
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father2.g.cs
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\App.g.cs
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Child.baml
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father1.baml
+C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father2.baml
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.g.resources
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
@@ -21,10 +28,3 @@ C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCom
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1.pdb
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Child.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father1.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father2.g.cs
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Child.baml
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father1.baml
-C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\obj\Debug\Father2.baml

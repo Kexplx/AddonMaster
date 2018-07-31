@@ -53,7 +53,6 @@ namespace AddonMaster.GUI
         }
 
         #region UI
-
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
@@ -77,6 +76,13 @@ namespace AddonMaster.GUI
             else if ((sender as Image).ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
+            }
+            else if ((sender as Image).ToolTip as string == "Help")
+            {
+                new InfoWindow(this)
+                {
+                    Owner = this
+                }.Show();
             }
         }
         #endregion

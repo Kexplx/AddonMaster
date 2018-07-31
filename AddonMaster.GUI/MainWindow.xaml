@@ -13,7 +13,7 @@
         <ListBox Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,36,0,41" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2" Background="LightGray" Opacity="1">
+                    <Grid Margin="0,2" Background="Gray"  Opacity="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
@@ -25,21 +25,21 @@
                         </Grid.ColumnDefinitions>
                         <Image Height="30" Grid.Column="0" Source="{Binding Image}" ToolTip="{Binding Description}"></Image>
                         <Label Grid.Column="1"></Label>
-                        <TextBlock VerticalAlignment="Center" Grid.Column="2" Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
                         <TextBlock VerticalAlignment="Center" Grid.Column="3" Text="{Binding Patch}" />
-                        <fa:ImageAwesome Icon="Retweet" Name="imgUpdate" ToolTip="Update selected addon" Grid.Column="4" Foreground="SteelBlue" Opacity="0.9" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Retweet" Name="imgUpdate" ToolTip="Update selected addon" Grid.Column="4" Foreground="LightSkyBlue" Opacity="1" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
                         <Label Grid.Column="5"></Label>
-                        <fa:ImageAwesome Icon="MinusSquare" Name="imgRemove" ToolTip="Remove selected addon" Grid.Column="6" Foreground="Maroon" Opacity="0.8" Cursor="Hand" Height="23" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="MinusSquare" Name="imgRemove" ToolTip="Remove selected addon" Grid.Column="6" Foreground="Crimson" Opacity="1" Cursor="Hand" Height="23" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="0.8" Cursor="Hand" Name="imgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
+        <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="1" Cursor="Hand" Name="imgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
         <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the green button to install an addon" Foreground="DarkGray" FontSize="20" Margin="13,200,8,262"/>
         <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="324,466,35,5"></fa:ImageAwesome>
-        <fa:ImageAwesome Icon="Bug" Opacity="0.8" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
+        <fa:ImageAwesome Icon="Bug" Opacity="1" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
         <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="369,5,5,469" Foreground="LightGray"/>
         <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="338,5,36,469" Foreground="LightGray" RenderTransformOrigin="1.66,0.85"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Maximize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="LightGray"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="LightGray"/>
     </Grid>
 </Controls:MetroWindow>

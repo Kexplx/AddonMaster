@@ -98,12 +98,18 @@ namespace AddonMaster.GUI
             {
                 Close();
             }
-            else
+            else if ((sender as Image).ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
-
-                #endregion
+            }
+            else if ((sender as Image).ToolTip as string == "Help")
+            {
+                new InfoWindow(this)
+                {
+                    Owner = this
+                }.Show();
             }
         }
+        #endregion
     }
 }

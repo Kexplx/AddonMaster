@@ -77,8 +77,12 @@ namespace AddonMaster.GUI
             {
                 WindowState = WindowState.Minimized;
             }
-            else
+            else if((sender as Image).ToolTip as string == "Help")
             {
+                new InfoWindow(this)
+                {
+                    Owner = this
+                }.Show();
             }
         }
         #endregion

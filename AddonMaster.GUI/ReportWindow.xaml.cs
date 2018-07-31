@@ -80,33 +80,30 @@ namespace AddonMaster.GUI
         }
 
         #region UI
-        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount == 2)
+            try
             {
-                Close();
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    DragMove();
+                }
             }
+            catch { }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((sender as MenuItem).Header.ToString() == "Close")
+            if ((sender as Image).ToolTip as string == "Close")
             {
                 Close();
             }
             else
             {
                 WindowState = WindowState.Minimized;
-            }
-        }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-            {
-                DragMove();
+                #endregion
             }
         }
-        #endregion
     }
 }

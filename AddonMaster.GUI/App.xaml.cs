@@ -7,16 +7,18 @@ namespace AddonMaster.GUI
     {
         public App()
         {
-            var configHandler = new ConfigHandler();
 
-            if (configHandler.DoesConfigExist())
-            {
-                new MainWindow(configHandler.GetAddonFolderNameOutOfConfig()).Show();
-            }
-            else
-            {
-                new SetupWindow().Show();
-            }
+            new InfoWindow().Show();
+            //var configHandler = new ConfigHandler();
+
+            //if (configHandler.DoesConfigExist())
+            //{
+            //    new MainWindow(configHandler.GetAddonFolderNameOutOfConfig()).Show();
+            //}
+            //else
+            //{
+            //    new SetupWindow().Show();
+            //}
         }
     }
 }

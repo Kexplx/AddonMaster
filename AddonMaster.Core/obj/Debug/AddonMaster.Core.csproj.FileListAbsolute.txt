@@ -6,7 +6,7 @@ c:\users\oscar rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMas
 C:\Users\Oscar Rosner\documents\visual studio 2017\Projects\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csprojAssemblyReference.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\Debug\AddonMaster.Core.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\Debug\AddonMaster.Core.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csprojAssemblyReference.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.pdb
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\Debug\AddonMaster.Core.csprojAssemblyReference.cache

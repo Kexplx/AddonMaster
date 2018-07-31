@@ -55,18 +55,6 @@ namespace AddonMaster.GUI
         }
 
         #region UI
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            if ((sender as MenuItem).Header.ToString() == "Close")
-            {
-                Close();
-            }
-            else
-            {
-                WindowState = WindowState.Minimized;
-            }
-        }
-
         private void MetroWindow_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -79,11 +67,18 @@ namespace AddonMaster.GUI
             catch { }
         }
 
-        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount == 2)
+            if ((sender as Image).ToolTip as string == "Close")
             {
                 Close();
+            }
+            else if((sender as Image).ToolTip as string == "Minimize")
+            {
+                WindowState = WindowState.Minimized;
+            }
+            else
+            {
             }
         }
         #endregion

@@ -8,24 +8,13 @@
                       mc:Ignorable="d"
                       BorderBrush="DimGray"
                       BorderThickness="1"
-                      Title="Install new addon" MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" WindowState="Normal" TitleForeground="LightGray" ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ShowTitleBar="False" MouseDown="Window_MouseDown">
+                      Title="Install new addon" FocusManager.FocusedElement="{Binding ElementName=txtUrl}"
+                      WindowState="Normal" TitleForeground="LightGray" WindowStyle="None"
+                      ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" 
+                      SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ShowTitleBar="False" MouseDown="Window_MouseDown" Height="Auto">
     <Grid Height="150" Width="370" Background="Black">
-        <Grid.ContextMenu>
-            <ContextMenu>
-                <MenuItem Header="Close" Click="MenuItem_Click">
-                    <MenuItem.Icon>
-                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"></Image>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Minimize" Click="MenuItem_Click">
-                    <MenuItem.Icon>
-                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Minimize_16x.png"></Image>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </ContextMenu>
-        </Grid.ContextMenu>
         <Border BorderThickness="1" BorderBrush="DarkGray" Margin="10,57,5,69" >
-            <TextBox Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" Opacity="0.9" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="355" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Margin="0" Height="24"/>
+            <TextBox Focusable="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" Opacity="0.9" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="353" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Height="22"/>
         </Border>
         <TextBlock Name="xd1" IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,61,0,73" Foreground="Gray" Width="300">
             <TextBlock.Style>
@@ -49,5 +38,8 @@
         </TextBlock>
         <Label Visibility="Hidden" Content="Please enter valid URL" Name="lblStatus" Foreground="IndianRed" HorizontalAlignment="Left" Margin="204,124,0,0" VerticalAlignment="Top" Width="127"/>
         <fa:ImageAwesome Icon="Cog" Name="spinner" Spin="True" Visibility="Collapsed" Foreground="LightGray" Opacity="0.8" SpinDuration="2"  Margin="258,120,5,4" />
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="345,5,5,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="320,5,30,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="295,5,55,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
     </Grid>
 </Controls:MetroWindow>

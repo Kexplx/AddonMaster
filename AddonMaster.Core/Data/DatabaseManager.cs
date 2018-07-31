@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 namespace AddonMaster.Core.Data
 {
     /// <summary>
-    /// Handles the creation of the DB, also enables writes, reades and deletes, db is the file 
+    /// Handles the creation of the DB's xml file, provides methods for reading, writing addons
     /// </summary>
     public class DatabaseManager
     {
@@ -30,7 +30,7 @@ namespace AddonMaster.Core.Data
         public DatabaseManager(string addonFolderPath)
         {
             serializer = new XmlSerializer(typeof(List<Addon>));
-            dbPath = addonFolderPath + @"\AddonMaster\addonDb.txt";
+            dbPath = addonFolderPath + @"\AddonMaster\addonMasterDB.xml";
             dbParentPath = addonFolderPath + @"\AddonMaster\";
             this.addonFolderPath = addonFolderPath;
 

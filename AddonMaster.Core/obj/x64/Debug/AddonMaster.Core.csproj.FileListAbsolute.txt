@@ -1,0 +1,6 @@
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\x64\Debug\AddonMaster.Core.dll
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\x64\Debug\AddonMaster.Core.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Debug\AddonMaster.Core.csprojAssemblyReference.cache
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Debug\AddonMaster.Core.csproj.CoreCompileInputs.cache
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Debug\AddonMaster.Core.dll
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Debug\AddonMaster.Core.pdb

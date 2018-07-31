@@ -22,6 +22,7 @@ namespace AddonMaster.GUI
             InitializeComponent();
             this.dbManager = dbManager;
             this.mainWindow = mainWindow;
+            txtUrl.Focus();
         }
 
         private void btnInstall_Click(object sender, RoutedEventArgs e)
@@ -52,17 +53,6 @@ namespace AddonMaster.GUI
         }
 
         #region UI
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            if ((sender as MenuItem).Header.ToString() == "Close")
-            {
-                Close();
-            }
-            else
-            {
-                WindowState = WindowState.Minimized;
-            }
-        }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -70,19 +60,23 @@ namespace AddonMaster.GUI
             e.Handled = true;
         }
 
-        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ClickCount == 2)
-            {
-                Close();
-            }
-        }
-
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
             {
                 DragMove();
+            }
+        }
+
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if ((sender as Image).ToolTip as string == "Close")
+            {
+                Close();
+            }
+            else if ((sender as Image).ToolTip as string == "Minimize")
+            {
+                WindowState = WindowState.Minimized;
             }
         }
         #endregion

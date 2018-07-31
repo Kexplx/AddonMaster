@@ -28,7 +28,7 @@ namespace AddonMaster.GUI
         {
             var addonWindow = new AddAddonWindow(this, dbManager);
             addonWindow.Owner = this;
-            addonWindow.Show();
+            addonWindow.ShowDialog();
         }
 
         private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
@@ -95,26 +95,6 @@ namespace AddonMaster.GUI
         }
 
         #region UI Stuff
-        private void MetroWindow_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ClickCount == 2)
-            {
-                Close();
-            }
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            if ((sender as MenuItem).Header.ToString() == "Close")
-            {
-                Close();
-            }
-            else
-            {
-                WindowState = WindowState.Minimized;
-            }
-        }
-
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
@@ -123,5 +103,17 @@ namespace AddonMaster.GUI
             }
         }
         #endregion
+
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if ((sender as Image).ToolTip as string == "Close")
+            {
+                Close();
+            }
+            else if((sender as Image).ToolTip as string == "Minimize")
+            {
+                WindowState = WindowState.Minimized;
+            }
+        }
     }
 }

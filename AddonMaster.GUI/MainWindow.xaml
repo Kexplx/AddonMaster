@@ -8,23 +8,9 @@
             BorderBrush="DarkGray"
             BorderThickness="1"
             mc:Ignorable="d"
-            MouseLeftButtonDown="MetroWindow_MouseLeftButtonDown" Background="Black" TitleForeground="LightGray" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowCloseButton="False" ShowMinButton="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+            Background="Gray" TitleForeground="LightGray" ShowMinButton="False" ShowCloseButton="False" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowMaxRestoreButton="False" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
     <Grid  Height="500" Width="400" Background="Black">
-        <Grid.ContextMenu>
-            <ContextMenu>
-                <MenuItem Header="Close" Click="MenuItem_Click">
-                    <MenuItem.Icon>
-                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Close_16x.png"></Image>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Minimize" Click="MenuItem_Click">
-                    <MenuItem.Icon>
-                        <Image Source="C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\Resources\Minimize_16x.png"></Image>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </ContextMenu>
-        </Grid.ContextMenu>
-        <ListBox Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,0,0,41" BorderBrush="DarkGray" BorderThickness="0,0,0,1" Background="Transparent">
+        <ListBox Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,36,0,41" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2" Background="LightGray" Opacity="1">
@@ -48,9 +34,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="0.8" Cursor="Hand" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
+        <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="0.8" Cursor="Hand" Name="imgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
         <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the green button to install an addon" Foreground="DarkGray" FontSize="20" Margin="13,200,8,262"/>
-        <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="333,469,31,5"></fa:ImageAwesome>
+        <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="324,466,35,5"></fa:ImageAwesome>
         <fa:ImageAwesome Icon="Bug" Opacity="0.8" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="369,5,5,469" Foreground="LightGray"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="338,5,36,469" Foreground="LightGray" RenderTransformOrigin="1.66,0.85"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Maximize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="LightGray"/>
     </Grid>
 </Controls:MetroWindow>

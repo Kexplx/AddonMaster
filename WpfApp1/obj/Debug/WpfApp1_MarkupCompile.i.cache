@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Oscar\source\repos\AddonMaster\WpfApp1\App.xaml
-31600294259
+31666820065
 
-11680664647
+11-1500644685
 191775356368
-AddAddonWindow.xaml;MainWindow.xaml;Window1.xaml;
+Child.xaml;Father1.xaml;Father2.xaml;
 
 True
 

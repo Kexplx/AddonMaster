@@ -23,7 +23,15 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            object o = 3;
 
+            switch(o)
+            {
+                case int s:
+                    break;
+                case double s:
+                    break;
+            }
         }
 
         static void ExtractToDirectory(string sourceFileName, string destinationDirectoryName)

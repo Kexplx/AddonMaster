@@ -1,0 +1,23 @@
+﻿<Controls:MetroWindow x:Class="AddonMaster.GUI.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      mc:Ignorable="d"
+                      BorderBrush="DimGray"
+                      BorderThickness="1"
+                      Title="Install new addon" FocusManager.FocusedElement="{Binding ElementName=txtUrl}"
+                      WindowState="Normal" TitleForeground="LightGray" WindowStyle="None"
+                      ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" 
+                      SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ShowTitleBar="False" MouseDown="Window_MouseDown">
+    <Grid Width="370" Background="Black" Height="220" Margin="0,0,0,0">
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="349,-5,5,187" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="328,-5,26,187" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+        <Border BorderBrush="LightGray" BorderThickness="0,1,0,0" Margin="0,27,0,0">
+        </Border>
+        <TextBox IsReadOnly="True" Visibility="Collapsed" BorderThickness="0" HorizontalAlignment="Left" Text="1. Use the green button to install a new Addon.&#xA;&#xA;2. The centric ListBox will display all your installed Addons.&#xA;Containing: Icon, Description (Mouseover Icon), Name, WoW Patch.&#xA;&#xA;3. The Update Button (Blue Arrows in Addon Row) will reinstall it.&#xA;&#xA;4. The Remove Button (Red Minus in Addon Row) will remove it.&#xA;&#xD;&#xA;5. The Report Button (Yellow Bug in left corner) opens the Bug Report Window." Name="txtMainWindow" Height="192" Background="Black" Foreground="LightGray" Margin="0,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370"/>
+        <TextBox IsReadOnly="True" BorderThickness="0" HorizontalAlignment="Left" Text="1. Choose link from curseofrger (format)&#xD;&#xA;2. click green button&#xD;&#xA;3. the progressbar and the cog in the right corner will signall the download's progress&#xD;&#xA;4. window closes automaticly" x:Name="txtAddAddonWindow" Height="192" Background="Black" Foreground="LightGray" Margin="0,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370"/>
+    </Grid>
+</Controls:MetroWindow>

@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
-            BorderBrush="DarkGray"
+            BorderBrush="Gray"
             BorderThickness="1"
             mc:Ignorable="d"
-            Background="Gray" TitleForeground="LightGray" ShowMinButton="False" ShowCloseButton="False" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowMaxRestoreButton="False" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
-    <Grid  Height="500" Width="400" Background="Black">
+            Background="LightGray" TitleForeground="LightGray" ResizeMode="CanMinimize" ShowMinButton="False" ShowCloseButton="False" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowMaxRestoreButton="False" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+    <Grid  Height="500" Width="400" Background="White">
         <ListBox Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,36,0,41" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2" Background="Gray"  Opacity="1">
+                    <Grid Margin="0,2" Background="LightGray"  Opacity="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
@@ -27,19 +27,19 @@
                         <Label Grid.Column="1"></Label>
                         <TextBlock VerticalAlignment="Center" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
                         <TextBlock VerticalAlignment="Center" Grid.Column="3" Text="{Binding Patch}" />
-                        <fa:ImageAwesome Icon="Retweet" Name="imgUpdate" ToolTip="Update selected addon" Grid.Column="4" Foreground="LightSkyBlue" Opacity="1" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Retweet" Name="imgUpdate" ToolTip="Update addon" Grid.Column="4" Foreground="SlateGray" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
                         <Label Grid.Column="5"></Label>
-                        <fa:ImageAwesome Icon="MinusSquare" Name="imgRemove" ToolTip="Remove selected addon" Grid.Column="6" Foreground="Crimson" Opacity="1" Cursor="Hand" Height="23" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="MinusSquare" Name="imgRemove" ToolTip="Remove addon" Grid.Column="6" Foreground="IndianRed" Cursor="Hand" Height="23" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <fa:ImageAwesome Icon="PlusSquare" ToolTip="Install an addon" Opacity="1" Cursor="Hand" Name="imgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="LightGreen"></fa:ImageAwesome>
-        <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the green button to install an addon" Foreground="DarkGray" FontSize="20" Margin="13,200,8,262"/>
+        <fa:ImageAwesome Icon="PlusCircle" ToolTip="Install an addon" Cursor="Hand" Name="imgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="SteelBlue"></fa:ImageAwesome>
+        <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the blue button to install an addon" Foreground="DimGray" FontSize="20" Margin="13,200,8,262"/>
         <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="324,466,35,5"></fa:ImageAwesome>
-        <fa:ImageAwesome Icon="Bug" Opacity="1" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="LightGoldenrodYellow"/>
-        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="369,5,5,469" Foreground="LightGray"/>
-        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="338,5,36,469" Foreground="LightGray" RenderTransformOrigin="1.66,0.85"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="LightGray"/>
+        <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="SlateGray"/>
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="369,5,5,469" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="338,5,36,469" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="Gray"/>
     </Grid>
 </Controls:MetroWindow>

@@ -30,23 +30,6 @@ namespace AddonMaster.Core.Data.Entities
             set;
         }
 
-        public BitmapImage Image
-        {
-            get
-            {
-                var img = new BitmapImage();
-                using (var stream = File.OpenRead(ImagePath))
-                {
-                    img.BeginInit();
-                    img.CacheOption = BitmapCacheOption.OnLoad;
-                    img.StreamSource = stream;
-                    img.EndInit();
-                }
-
-                return img;
-            }
-        }
-
         public string ImagePath
         {
             get;

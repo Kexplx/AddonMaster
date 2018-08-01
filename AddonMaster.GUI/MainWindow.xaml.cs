@@ -1,6 +1,8 @@
 ﻿using AddonMaster.Core.Data;
 using AddonMaster.Core.Data.Entities;
+using AddonMaster.GUI.ViewModels;
 using MahApps.Metro.Controls;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -28,7 +30,7 @@ namespace AddonMaster.GUI
         {
             var addonWindow = new AddAddonWindow(this, dbManager);
             addonWindow.Owner = this;
-            addonWindow.ShowDialog();
+            addonWindow.Show();
         }
 
         private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
@@ -59,21 +61,29 @@ namespace AddonMaster.GUI
 
         private void imgRemove_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var addon = (sender as Image).DataContext as Addon;
+            var addon = (sender as Image).DataContext as AddonViewModel;
             var oldImagePath = string.Empty;
 
             var worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
 
-            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.RemoveAddon(addon.ID);
-            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { File.Delete(addon.ImagePath); UpdateListBoxOnMainWindow(); };
+            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.RemoveAddon(addon.Addon.ID);
+            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { File.Delete(addon.Addon.ImagePath); UpdateListBoxOnMainWindow(); };
 
             worker.RunWorkerAsync();
         }
 
         public void UpdateListBoxOnMainWindow()
         {
-            lbAddonList.ItemsSource = dbManager.GetAddons().OrderBy(x => x.Name);
+            var addonViews = new List<AddonViewModel>();
+
+            dbManager.GetAddons().OrderBy(x => x.Name).ToList().ForEach(x =>
+            {
+                addonViews.Add(new AddonViewModel { Addon = x });
+            });
+
+            lbAddonList.ItemsSource = addonViews;
+
             lbAddonList.Items.Refresh();
 
             if (lbAddonList.Items.Count != 0)
@@ -99,7 +109,11 @@ namespace AddonMaster.GUI
         {
             if (e.ChangedButton == MouseButton.Left)
             {
-                DragMove();
+                try
+                {
+                    DragMove();
+                }
+                catch { }
             }
         }
         #endregion

@@ -22,7 +22,6 @@ namespace AddonMaster.GUI
             InitializeComponent();
             this.dbManager = dbManager;
             this.mainWindow = mainWindow;
-            txtUrl.Focus();
         }
 
         private void btnInstall_Click(object sender, RoutedEventArgs e)
@@ -38,7 +37,7 @@ namespace AddonMaster.GUI
 
         private void txtUrl_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (downloadUrlRegex.Match(txtUrl.Text).Value != txtUrl.Text)
+            if (downloadUrlRegex.Match(txtUrl.Text).Value != txtUrl.Text || txtUrl.Text == "")
             {
                 lblStatus.Visibility = Visibility.Visible;
                 btnInstall.IsEnabled = false;
@@ -48,7 +47,7 @@ namespace AddonMaster.GUI
             {
                 lblStatus.Visibility = Visibility.Collapsed;
                 btnInstall.IsEnabled = true;
-                btnInstall.Opacity = 0.9;
+                btnInstall.Opacity = 1;
             }
         }
 
@@ -63,6 +62,7 @@ namespace AddonMaster.GUI
         {
             if (e.ChangedButton == MouseButton.Left)
             {
+                Keyboard.ClearFocus();
                 DragMove();
             }
         }

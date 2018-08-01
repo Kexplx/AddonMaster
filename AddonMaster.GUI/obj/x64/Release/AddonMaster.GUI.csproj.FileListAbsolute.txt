@@ -29,3 +29,5 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\AddonMas
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\AddonMaster.GUI.csproj.CopyComplete
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\AddonMaster.GUI.exe
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\AddonMaster.GUI.pdb
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\InfoWindow.baml
+C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.GUI\obj\x64\Release\InfoWindow.g.cs

@@ -74,7 +74,7 @@ namespace AddonMaster.GUI
             }
             else
             {
-                imgSend.Opacity = 0.6;
+                imgSend.Opacity = 0.8;
                 imgSend.IsEnabled = false;
             }
         }

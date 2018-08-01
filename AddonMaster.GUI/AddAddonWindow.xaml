@@ -6,17 +6,16 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-                      BorderBrush="DimGray"
+                      BorderBrush="LightGray"
                       BorderThickness="1"
-                      Title="Install new addon" FocusManager.FocusedElement="{Binding ElementName=txtUrl}"
                       WindowState="Normal" TitleForeground="LightGray" WindowStyle="None"
-                      ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" 
-                      SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" ShowTitleBar="False" MouseDown="Window_MouseDown" Height="Auto">
-    <Grid Height="150" Width="370" Background="Black">
+                      ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" Background="LightGray"
+                      SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" WindowTransitionsEnabled="True" ShowTitleBar="False" MouseDown="Window_MouseDown" Height="Auto">
+    <Grid Name="mygrid" Height="150" Width="370" Background="White">
         <Border BorderThickness="1" BorderBrush="DarkGray" Margin="10,57,5,69" >
-            <TextBox Focusable="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" Opacity="0.9" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="353" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Height="22"/>
+            <TextBox Focusable="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" Foreground="DimGray" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="353" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Height="22"/>
         </Border>
-        <TextBlock Name="xd1" IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,61,0,73" Foreground="Gray" Width="300">
+        <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,61,0,73" Foreground="Gray" Width="300">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -24,22 +23,25 @@
                         <DataTrigger Binding="{Binding Text, ElementName=txtUrl}" Value="">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
+                        <DataTrigger Binding="{Binding IsKeyboardFocused, ElementName=txtUrl}" Value="true">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <ProgressBar Visibility="Hidden" x:Name="pb1" Value="0" Foreground="LightGreen" BorderThickness="0" Background="Transparent" Opacity="0.7" HorizontalAlignment="Left" Height="10" Margin="10,84,0,0" VerticalAlignment="Top" Width="355"/>
-        <fa:ImageAwesome Cursor="Hand" IsEnabled="False" Name="btnInstall" MouseDown="btnInstall_Click" Opacity="0.6" Icon="Download" Margin="332,120,4,5" Foreground="LightGreen"></fa:ImageAwesome>
-        <Label Content="Choose URL:" Foreground="LightGray" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Width="81"/>
-        <TextBlock Margin="80,38,62,96" Opacity="0.9">           
-                <Hyperlink Foreground="LightBlue" NavigateUri="https://www.curseforge.com/wow/addons" RequestNavigate="Hyperlink_RequestNavigate">
+        <ProgressBar Visibility="Collapsed" x:Name="pb1" Value="0" Foreground="SteelBlue" Opacity="0.8" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Height="10" Margin="10,84,0,0" VerticalAlignment="Top" Width="355"/>
+        <fa:ImageAwesome Cursor="Hand" IsEnabled="False" Name="btnInstall" MouseDown="btnInstall_Click" Opacity="0.6" Icon="Download" Margin="335,119,6,5" Foreground="SteelBlue"></fa:ImageAwesome>
+        <Label Content="Choose URL:" Foreground="DimGray" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBlock Margin="80,38,62,96" Opacity="1">           
+                <Hyperlink Foreground="SteelBlue" NavigateUri="https://www.curseforge.com/wow/addons" RequestNavigate="Hyperlink_RequestNavigate">
                     https://www.curseforge.com/wow/addons
                 </Hyperlink>
         </TextBlock>
         <Label Visibility="Hidden" Content="Please enter valid URL" Name="lblStatus" Foreground="IndianRed" HorizontalAlignment="Left" Margin="204,124,0,0" VerticalAlignment="Top" Width="127"/>
-        <fa:ImageAwesome Icon="Cog" Name="spinner" Spin="True" Visibility="Collapsed" Foreground="LightGray" Opacity="0.8" SpinDuration="2"  Margin="258,120,5,4" />
-        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="345,5,5,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
-        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="320,5,30,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="0.8" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="295,5,55,125" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+        <fa:ImageAwesome Icon="Cog" Name="spinner" Spin="True" Visibility="Collapsed" Foreground="DimGray" Opacity="0.8" SpinDuration="2"  Margin="305,119,39,5" />
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="345,5,5,125" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="320,5,30,125" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="295,5,55,125" Foreground="Gray"/>
     </Grid>
 </Controls:MetroWindow>

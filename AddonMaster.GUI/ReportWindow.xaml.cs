@@ -86,6 +86,7 @@ namespace AddonMaster.GUI
             {
                 if (e.ChangedButton == MouseButton.Left)
                 {
+                    Keyboard.ClearFocus();
                     DragMove();
                 }
             }

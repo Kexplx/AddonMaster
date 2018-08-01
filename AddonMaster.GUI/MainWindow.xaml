@@ -27,9 +27,9 @@
                         <Label Grid.Column="1"></Label>
                         <TextBlock VerticalAlignment="Center" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
                         <TextBlock VerticalAlignment="Center" Grid.Column="3" Text="{Binding Patch}" />
-                        <fa:ImageAwesome Icon="Retweet" Name="imgUpdate" ToolTip="Update addon" Grid.Column="4" Foreground="SlateGray" Cursor="Hand" Height="23" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="Refresh" Name="imgUpdate" ToolTip="Update addon" Grid.Column="4" Opacity="0.9" Foreground="SteelBlue" Cursor="Hand" Height="22" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
                         <Label Grid.Column="5"></Label>
-                        <fa:ImageAwesome Icon="MinusSquare" Name="imgRemove" ToolTip="Remove addon" Grid.Column="6" Foreground="IndianRed" Cursor="Hand" Height="23" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
+                        <fa:ImageAwesome Icon="MinusCircle" Name="imgRemove" ToolTip="Remove addon" Grid.Column="6" Foreground="IndianRed" Cursor="Hand" Height="24" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

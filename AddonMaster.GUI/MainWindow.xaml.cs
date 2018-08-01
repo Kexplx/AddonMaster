@@ -35,7 +35,7 @@ namespace AddonMaster.GUI
 
         private void imgUpdate_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var addon = (sender as Image).DataContext as Addon;
+            var addonViewModel = (sender as Image).DataContext as AddonViewModel;
 
             var worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
@@ -43,15 +43,15 @@ namespace AddonMaster.GUI
             worker.DoWork += (object x, DoWorkEventArgs y) =>
             {
                 (x as BackgroundWorker).ReportProgress(0);
-                dbManager.RemoveAddon(addon.ID);
-                dbManager.AddAddon(addon.DownloadUrl, worker);
+                dbManager.RemoveAddon(addonViewModel.Addon.ID);
+                dbManager.AddAddon(addonViewModel.Addon.DownloadUrl, worker);
             };
 
             worker.ProgressChanged += (object x, ProgressChangedEventArgs y) => Spinner.Visibility = Visibility.Visible;
 
             worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) =>
             {
-                File.Delete(addon.ImagePath);
+                File.Delete(addonViewModel.Addon.ImagePath);
                 UpdateListBoxOnMainWindow();
                 Spinner.Visibility = Visibility.Collapsed;
             };
@@ -61,14 +61,14 @@ namespace AddonMaster.GUI
 
         private void imgRemove_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var addon = (sender as Image).DataContext as AddonViewModel;
+            var addonViewModel = (sender as Image).DataContext as AddonViewModel;
             var oldImagePath = string.Empty;
 
             var worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
 
-            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.RemoveAddon(addon.Addon.ID);
-            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { File.Delete(addon.Addon.ImagePath); UpdateListBoxOnMainWindow(); };
+            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.RemoveAddon(addonViewModel.Addon.ID);
+            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { File.Delete(addonViewModel.Addon.ImagePath); UpdateListBoxOnMainWindow(); };
 
             worker.RunWorkerAsync();
         }
@@ -135,6 +135,11 @@ namespace AddonMaster.GUI
                     Owner = this
                 }.Show();
             }
+        }
+
+        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

@@ -12,10 +12,10 @@
                       ShowCloseButton="False" ResizeMode="NoResize" ShowMinButton="False" Background="LightGray"
                       SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" WindowTransitionsEnabled="True" ShowTitleBar="False" MouseDown="Window_MouseDown" Height="Auto">
     <Grid Name="mygrid" Height="150" Width="370" Background="White">
-        <Border BorderThickness="1" BorderBrush="DarkGray" Margin="10,57,5,69" >
+        <Border BorderThickness="1" BorderBrush="DarkGray" Margin="10,65,5,61" >
             <TextBox Focusable="True" Text="{Binding OutlinePlain, Mode=TwoWay, NotifyOnTargetUpdated=True}" Foreground="DimGray" TextChanged="txtUrl_TextChanged" VerticalContentAlignment="Center" Width="353" Background="LightGray" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Left" Name="txtUrl" Height="22"/>
         </Border>
-        <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,61,0,73" Foreground="Gray" Width="300">
+        <TextBlock IsHitTestVisible="False" Text="https://www.curseforge.com/wow/addons/bartender4" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,69,0,65" Foreground="Gray" Width="300">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -30,10 +30,10 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <ProgressBar Visibility="Collapsed" x:Name="pb1" Value="0" Foreground="SteelBlue" Opacity="0.8" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Height="10" Margin="10,84,0,0" VerticalAlignment="Top" Width="355"/>
+        <ProgressBar Visibility="Collapsed" x:Name="pb1" Value="0" Foreground="SteelBlue" Opacity="0.8" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Height="10" Margin="10,91,0,0" VerticalAlignment="Top" Width="355"/>
         <fa:ImageAwesome Cursor="Hand" IsEnabled="False" Name="btnInstall" MouseDown="btnInstall_Click" Opacity="0.6" Icon="Download" Margin="335,119,6,5" Foreground="SteelBlue"></fa:ImageAwesome>
-        <Label Content="Choose URL:" Foreground="DimGray" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Width="81"/>
-        <TextBlock Margin="80,38,62,96" Opacity="1">           
+        <Label Content="Choose URL:" Foreground="DimGray" HorizontalAlignment="Left" Margin="6,42,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBlock Margin="80,46,62,88" Opacity="1">           
                 <Hyperlink Foreground="SteelBlue" NavigateUri="https://www.curseforge.com/wow/addons" RequestNavigate="Hyperlink_RequestNavigate">
                     https://www.curseforge.com/wow/addons
                 </Hyperlink>
@@ -43,5 +43,7 @@
         <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="345,5,5,125" Foreground="Gray"/>
         <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="320,5,30,125" Foreground="Gray"/>
         <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="295,5,55,125" Foreground="Gray"/>
+        <Border Margin="0,29,0,119" BorderBrush="DarkGray" BorderThickness="0,1,0,0"></Border>
+        <Label Content="Addon Master" Foreground="DimGray" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Controls:MetroWindow>

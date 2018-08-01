@@ -9,11 +9,25 @@
             BorderThickness="1"
             mc:Ignorable="d"
             Background="LightGray" TitleForeground="LightGray" ResizeMode="CanMinimize" ShowMinButton="False" ShowCloseButton="False" SizeToContent="WidthAndHeight" ShowTitleBar="False" ShowMaxRestoreButton="False" WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown" >
+    <Window.Resources>
+        <Style x:Key="ListBoxtemStyleNoHighlighting" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="contentPresenter"></ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid  Height="500" Width="400" Background="White">
-        <ListBox Name="lbAddonList" HorizontalContentAlignment="Stretch" Margin="0,36,0,41" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
+        <ListBox Name="lbAddonList" ItemContainerStyle="{StaticResource ListBoxtemStyleNoHighlighting}" HorizontalContentAlignment="Stretch" Margin="0,36,0,41" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,2" Background="LightGray"  Opacity="1">
+                    <Border BorderBrush="LightGray" Margin="2,2,2,0" BorderThickness="0,0,0,0">
+                    <Grid Margin="0" Background="Gainsboro" Opacity="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30"/>
                             <ColumnDefinition Width="10" />
@@ -23,14 +37,15 @@
                             <ColumnDefinition Width="2" />
                             <ColumnDefinition Width="30" />
                         </Grid.ColumnDefinitions>
-                        <Image Height="30" Grid.Column="0" Source="{Binding Image}" ToolTip="{Binding Description}"></Image>
+                        <Image Height="30" Grid.Column="0" MouseDown="Window_MouseDown" Source="{Binding Image}" ToolTip="{Binding Description}"></Image>
                         <Label Grid.Column="1"></Label>
-                        <TextBlock VerticalAlignment="Center" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
-                        <TextBlock VerticalAlignment="Center" Grid.Column="3" Text="{Binding Patch}" />
+                        <TextBlock VerticalAlignment="Center" MouseDown="Window_MouseDown" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
+                        <TextBlock VerticalAlignment="Center" MouseDown="Window_MouseDown" Grid.Column="3" Text="{Binding Patch}" />
                         <fa:ImageAwesome Icon="Refresh" Name="imgUpdate" ToolTip="Update addon" Grid.Column="4" Opacity="0.9" Foreground="SteelBlue" Cursor="Hand" Height="22" MouseDown="imgUpdate_MouseDown"></fa:ImageAwesome>
                         <Label Grid.Column="5"></Label>
                         <fa:ImageAwesome Icon="MinusCircle" Name="imgRemove" ToolTip="Remove addon" Grid.Column="6" Foreground="IndianRed" Cursor="Hand" Height="24" MouseDown="imgRemove_MouseDown"></fa:ImageAwesome>
                     </Grid>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -38,8 +53,9 @@
         <Label HorizontalContentAlignment="Center" Name="lblEmptyList" Content="Use the blue button to install an addon" Foreground="DimGray" FontSize="20" Margin="13,200,8,262"/>
         <fa:ImageAwesome Icon="Cog" Name="Spinner" Visibility="Collapsed" Foreground="LightGray" Spin="True" SpinDuration="2" Margin="324,466,35,5"></fa:ImageAwesome>
         <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="SlateGray"/>
-        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="369,5,5,469" Foreground="Gray"/>
-        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="338,5,36,469" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="307,5,67,469" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="371,5,5,469" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="342,5,34,469" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="313,5,63,469" Foreground="Gray"/>
+        <Label Content="Addon Master" Foreground="DimGray" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Controls:MetroWindow>

@@ -65,20 +65,6 @@ namespace AddonMaster.GUI
             checkboxFeedback.IsChecked = false;
         }
 
-        private void txtContent_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if ((sender as TextBox).Text.Length > 0)
-            {
-                imgSend.Opacity = 1;
-                imgSend.IsEnabled = true;
-            }
-            else
-            {
-                imgSend.Opacity = 0.8;
-                imgSend.IsEnabled = false;
-            }
-        }
-
         #region UI
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

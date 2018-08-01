@@ -23,7 +23,7 @@ namespace AddonMaster.GUI
                 {
                     lblStatus.Visibility = Visibility.Visible;
                     btnContinue.IsEnabled = false;
-                    btnContinue.Opacity = 0.8;
+                    btnContinue.Opacity = 0.6;
                 }
                 catch { }
             }

@@ -3,4 +3,3 @@ C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\bin\x64\Release\AddonMa
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Release\AddonMaster.Core.csproj.CoreCompileInputs.cache
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Release\AddonMaster.Core.dll
 C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Release\AddonMaster.Core.pdb
-C:\Users\Oscar\source\repos\AddonMaster\AddonMaster.Core\obj\x64\Release\AddonMaster.Core.csprojAssemblyReference.cache

@@ -30,8 +30,30 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <CheckBox Name="checkboxBug" Checked="checkboxBug_Checked" Content="Bug Report" Background="White" Foreground="DimGray" HorizontalAlignment="Left" Margin="2,176,0,0" VerticalAlignment="Top"/>
-        <CheckBox Name="checkboxFeedback" Content="Feedback" Checked="checkboxFeedback_Checked" Background="White" Foreground="DimGray" HorizontalAlignment="Left" Margin="86,176,0,0" VerticalAlignment="Top"></CheckBox>
+        <CheckBox Name="checkboxBug" Content="Bug Report" Background="White" Foreground="DimGray" HorizontalAlignment="Left" Margin="2,177,0,0" VerticalAlignment="Top">
+            <CheckBox.Style>
+                <Style TargetType="{x:Type CheckBox}">
+                    <Setter Property="IsChecked" Value="True"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=checkboxFeedback}" Value="true">
+                            <Setter Property="IsChecked" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <CheckBox Name="checkboxFeedback" Content="Feedback" Background="White" Foreground="DimGray" HorizontalAlignment="Left" Margin="86,177,0,0" VerticalAlignment="Top">
+            <CheckBox.Style>
+                <Style TargetType="{x:Type CheckBox}">
+                    <Setter Property="IsChecked" Value="False"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked, ElementName=checkboxBug}" Value="False">
+                            <Setter Property="IsChecked" Value="True"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
         <fa:ImageAwesome Cursor="Hand" x:Name="imgSend" ToolTip="Send the Feedback" MouseDown="imgSend_MouseDown" Opacity="0.8" Icon="Send" Margin="340,172,9,-1" Foreground="SteelBlue">
             <fa:ImageAwesome.Style>
                 <Style TargetType="{x:Type fa:ImageAwesome}">

@@ -14,8 +14,6 @@ namespace AddonMaster.GUI
         public ReportWindow()
         {
             InitializeComponent();
-
-            checkboxBug.IsChecked = true;
         }
 
         private void imgSend_MouseDown(object sender, MouseButtonEventArgs e)
@@ -54,17 +52,6 @@ namespace AddonMaster.GUI
 
             worker.RunWorkerAsync(Tuple.Create(checkboxBug.IsChecked, txtContent.Text));
         }
-
-        private void checkboxFeedback_Checked(object sender, RoutedEventArgs e)
-        {
-            checkboxBug.IsChecked = false;
-        }
-
-        private void checkboxBug_Checked(object sender, RoutedEventArgs e)
-        {
-            checkboxFeedback.IsChecked = false;
-        }
-
         #region UI
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {

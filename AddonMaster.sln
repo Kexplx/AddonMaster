@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddonMaster.GUI", "AddonMas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddonMaster.Core", "AddonMaster.Core\AddonMaster.Core.csproj", "{05E4C794-631A-4B1C-A6E9-5976969EF65D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AddonMaster.Setup", "AddonMaster.Setup\AddonMaster.Setup.vdproj", "{267DC27E-89C5-4A02-935A-D6DCF1CBDA4D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{05E4C794-631A-4B1C-A6E9-5976969EF65D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05E4C794-631A-4B1C-A6E9-5976969EF65D}.Release|x64.ActiveCfg = Release|x64
 		{05E4C794-631A-4B1C-A6E9-5976969EF65D}.Release|x64.Build.0 = Release|x64
-		{267DC27E-89C5-4A02-935A-D6DCF1CBDA4D}.Debug|Any CPU.ActiveCfg = Debug
-		{267DC27E-89C5-4A02-935A-D6DCF1CBDA4D}.Debug|x64.ActiveCfg = Debug
-		{267DC27E-89C5-4A02-935A-D6DCF1CBDA4D}.Release|Any CPU.ActiveCfg = Release
-		{267DC27E-89C5-4A02-935A-D6DCF1CBDA4D}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

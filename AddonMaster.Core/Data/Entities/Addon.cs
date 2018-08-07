@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Windows.Media.Imaging;
 
 namespace AddonMaster.Core.Data.Entities
 {
     public class Addon
     {
-        public long ID
+        public long Id
         {
             get;
             set;

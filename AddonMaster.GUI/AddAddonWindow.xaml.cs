@@ -1,5 +1,4 @@
 ﻿using AddonMaster.Core.Data;
-using MahApps.Metro.Controls;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
@@ -10,44 +9,49 @@ using System.Windows.Navigation;
 
 namespace AddonMaster.GUI
 {
-    public partial class AddAddonWindow : MetroWindow
+    public partial class AddAddonWindow
     {
-        private MainWindow mainWindow;
-        private DatabaseManager dbManager;
+        private readonly MainWindow _mainWindow;
+        private readonly DatabaseManager _dbManager;
 
-        private Regex downloadUrlRegex = new Regex(@"https:\/\/www\.curseforge\.com\/(?i)wow\/addons\/[^\/]*");
+        private readonly Regex _downloadUrlRegex = new Regex(@"https:\/\/www\.curseforge\.com\/(?i)wow\/addons\/.[^\/]*");
 
         public AddAddonWindow(MainWindow mainWindow, DatabaseManager dbManager)
         {
             InitializeComponent();
-            this.dbManager = dbManager;
-            this.mainWindow = mainWindow;
+            _dbManager = dbManager;
+            _mainWindow = mainWindow;
         }
 
         private void btnInstall_Click(object sender, RoutedEventArgs e)
         {
-            var worker = new BackgroundWorker();
-            worker.WorkerReportsProgress = true;
-            worker.DoWork += (object x, DoWorkEventArgs y) => dbManager.AddAddon(y.Argument as string, worker);
-            worker.ProgressChanged += (object x, ProgressChangedEventArgs y) => { pb1.Visibility = Visibility.Visible; spinner.Visibility = Visibility.Visible; pb1.Value += y.ProgressPercentage; };
-            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { mainWindow.UpdateListBoxOnMainWindow(); Close(); };
+            var worker = new BackgroundWorker {WorkerReportsProgress = true};
 
-            worker.RunWorkerAsync(downloadUrlRegex.Match(txtUrl.Text).Value);
+            worker.DoWork += (x, y) => _dbManager.AddAddon(y.Argument as string, worker);
+            worker.ProgressChanged += (x, y) =>
+            {
+                Pb1.Visibility = Visibility.Visible;
+                Spinner.Visibility = Visibility.Visible;
+                Pb1.Value += y.ProgressPercentage;
+            };
+            worker.RunWorkerCompleted += (x, y) => { _mainWindow.UpdateListBoxOnMainWindow(); Close(); };
+
+            worker.RunWorkerAsync(_downloadUrlRegex.Match(TxtUrl.Text).Value);
         }
 
         private void txtUrl_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (downloadUrlRegex.Match(txtUrl.Text).Value != txtUrl.Text || txtUrl.Text == "")
+            if (_downloadUrlRegex.Match(TxtUrl.Text).Value != TxtUrl.Text || TxtUrl.Text == "")
             {
-                lblStatus.Visibility = Visibility.Visible;
-                btnInstall.IsEnabled = false;
-                btnInstall.Opacity = 0.6;
+                LblStatus.Visibility = Visibility.Visible;
+                BtnInstall.IsEnabled = false;
+                BtnInstall.Opacity = 0.6;
             }
             else
             {
-                lblStatus.Visibility = Visibility.Collapsed;
-                btnInstall.IsEnabled = true;
-                btnInstall.Opacity = 1;
+                LblStatus.Visibility = Visibility.Collapsed;
+                BtnInstall.IsEnabled = true;
+                BtnInstall.Opacity = 1;
             }
         }
 
@@ -69,15 +73,15 @@ namespace AddonMaster.GUI
 
         private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((sender as Image).ToolTip as string == "Close")
+            if ((sender as Image)?.ToolTip as string == "Close")
             {
                 Close();
             }
-            else if ((sender as Image).ToolTip as string == "Minimize")
+            else if ((sender as Image)?.ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
             }
-            else if ((sender as Image).ToolTip as string == "Help")
+            else if ((sender as Image)?.ToolTip as string == "Help")
             {
                 new InfoWindow(this)
                 {

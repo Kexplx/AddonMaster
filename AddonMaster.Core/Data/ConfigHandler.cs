@@ -7,11 +7,11 @@ namespace AddonMaster.Core.Data
     /// </summary>
     public class ConfigHandler
     {
-        private string configPath = "config.xml";
+        private readonly string _configPath = "config.xml";
 
         public void CreateOrUpdateConfig(string addonFolder)
         {
-            using (var stream = File.Open(configPath, FileMode.OpenOrCreate))
+            using (var stream = File.Open(_configPath, FileMode.OpenOrCreate))
             {
                 var writer = new StreamWriter(stream);
                 writer.WriteLine(addonFolder);
@@ -21,7 +21,7 @@ namespace AddonMaster.Core.Data
 
         public string GetAddonFolderNameOutOfConfig()
         {
-            using (var stream = File.Open(configPath, FileMode.Open))
+            using (var stream = File.Open(_configPath, FileMode.Open))
             {
                 var reader = new StreamReader(stream);
                 return reader.ReadLine();
@@ -30,7 +30,7 @@ namespace AddonMaster.Core.Data
 
         public bool DoesConfigExist()
         {
-            return File.Exists(configPath);
+            return File.Exists(_configPath);
         }
     }
 }

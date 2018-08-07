@@ -1,5 +1,4 @@
 ﻿using AddonMaster.Core.Data;
-using MahApps.Metro.Controls;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,7 +7,7 @@ using WinForms = System.Windows.Forms;
 
 namespace AddonMaster.GUI
 {
-    public partial class SetupWindow : MetroWindow
+    public partial class SetupWindow
     {
         public SetupWindow()
         {
@@ -17,21 +16,24 @@ namespace AddonMaster.GUI
 
         private void TxtPath_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!Directory.Exists((sender as TextBox).Text))
+            if (!Directory.Exists((sender as TextBox)?.Text))
             {
                 try
                 {
-                    lblStatus.Visibility = Visibility.Visible;
-                    btnContinue.IsEnabled = false;
-                    btnContinue.Opacity = 0.6;
+                    LblStatus.Visibility = Visibility.Visible;
+                    BtnContinue.IsEnabled = false;
+                    BtnContinue.Opacity = 0.6;
                 }
-                catch { }
+                catch
+                {
+                    // ignored
+                }
             }
             else
             {
-                lblStatus.Visibility = Visibility.Collapsed;
-                btnContinue.IsEnabled = true;
-                btnContinue.Opacity = 1;
+                LblStatus.Visibility = Visibility.Collapsed;
+                BtnContinue.IsEnabled = true;
+                BtnContinue.Opacity = 1;
             }
         }
 
@@ -41,16 +43,16 @@ namespace AddonMaster.GUI
             {
                 dialog.ShowDialog();
                 var result = dialog.SelectedPath;
-                txtAddonFolderPath.Text = result;
+                TxtAddonFolderPath.Text = result;
             }
         }
 
         private void btnContinue_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var configHandler = new ConfigHandler();
-            configHandler.CreateOrUpdateConfig(txtAddonFolderPath.Text);
+            configHandler.CreateOrUpdateConfig(TxtAddonFolderPath.Text);
 
-            new MainWindow(txtAddonFolderPath.Text).Show();
+            new MainWindow(TxtAddonFolderPath.Text).Show();
             Close();
         }
 
@@ -64,20 +66,23 @@ namespace AddonMaster.GUI
                     DragMove();
                 }
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((sender as Image).ToolTip as string == "Close")
+            if ((sender as Image)?.ToolTip as string == "Close")
             {
                 Close();
             }
-            else if((sender as Image).ToolTip as string == "Minimize")
+            else if((sender as Image)?.ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
             }
-            else if((sender as Image).ToolTip as string == "Help")
+            else if((sender as Image)?.ToolTip as string == "Help")
             {
                 new InfoWindow(this)
                 {

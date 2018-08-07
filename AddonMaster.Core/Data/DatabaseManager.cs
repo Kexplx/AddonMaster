@@ -16,39 +16,42 @@ namespace AddonMaster.Core.Data
     /// </summary>
     public class DatabaseManager
     {
-        private Regex addonDownloadRessourceRegex = new Regex(@"\/wow\/addons\/.*\/download\/\d*\/file");
-        private static Regex addonNameRegex = new Regex("<meta property=\"og:title\" content=\"(.*)\"");
-        private Regex addonImageRegex = new Regex("<meta property=\"og:image\" content=(.*[\\.png|\\.jpg])\"");
-        private Regex addonDescriptionRegex = new Regex("<meta name=\"description\" content=\"(.*)\"");
-        private Regex addonPatchRegex = new Regex("Game Version: (.*)<");
+        private readonly Regex _addonDownloadRessourceRegex = new Regex(@"\/(?i)wow\/addons\/.*\/download\/\d*\/file");
+        private readonly Regex _addonNameRegex = new Regex("<meta property=\"og:title\" content=\"(.*)\"");
+        private readonly Regex _addonImageRegex = new Regex("<meta property=\"og:image\" content=(?i)(.*[\\.png|\\.jpg])\"");
+        private readonly Regex _addonDescriptionRegex = new Regex("<meta name=\"description\" content=\"(.*)\"");
+        private readonly Regex _addonPatchRegex = new Regex("Game Version: (.*)<");
 
-        private XmlSerializer serializer;
-        private string dbPath;
-        private string dbParentPath;
-        private string addonFolderPath;
+        private readonly XmlSerializer _serializer;
+        private readonly string _dbPath;
+        private readonly string _dbParentPath;
+        private readonly string _addonFolderPath;
 
         public DatabaseManager(string addonFolderPath)
         {
-            serializer = new XmlSerializer(typeof(List<Addon>));
-            dbPath = addonFolderPath + @"\AddonMaster\addonMasterDB.xml";
-            dbParentPath = addonFolderPath + @"\AddonMaster\";
-            this.addonFolderPath = addonFolderPath;
+            _serializer = new XmlSerializer(typeof(List<Addon>));
+            _dbPath = addonFolderPath + @"\AddonMaster\addonMasterDB.xml";
+            _dbParentPath = addonFolderPath + @"\AddonMaster\";
+            _addonFolderPath = addonFolderPath;
 
-            if (!File.Exists(dbPath))
+            if (!File.Exists(_dbPath))
             {
-                Directory.CreateDirectory(dbParentPath);
-                using (File.Create(dbPath))
+                if (!Directory.Exists(_dbParentPath))
+                {
+                    Directory.CreateDirectory(_dbParentPath);
+                }
+                using (File.Create(_dbPath))
                 { }
             }
         }
 
         public List<Addon> GetAddons()
         {
-            using (var stream = File.Open(dbPath, FileMode.Open))
+            using (var stream = File.Open(_dbPath, FileMode.Open))
             {
                 try
                 {
-                    return (List<Addon>)serializer.Deserialize(stream);
+                    return (List<Addon>)_serializer.Deserialize(stream);
                 }
                 catch
                 {
@@ -61,7 +64,7 @@ namespace AddonMaster.Core.Data
         {
             try
             {
-                return (List<Addon>)serializer.Deserialize(s);
+                return (List<Addon>)_serializer.Deserialize(s);
             }
             catch
             {
@@ -71,23 +74,23 @@ namespace AddonMaster.Core.Data
 
         public void AddAddon(string url, BackgroundWorker backGroundWorker)
         {
-            Addon addon = new Addon
+            using (var client = new WebClient())
             {
-                ID = new Random().Next(1, 999999999),
-                DownloadUrl = url,
-                InstalledDirectories = new List<string>()
-            };
-            backGroundWorker.ReportProgress(5);
-
-            using (WebClient client = new WebClient())
-            {
+                var addon = new Addon
+                {
+                    Id = new Random().Next(1, 999999999),
+                    DownloadUrl = url,
+                    InstalledDirectories = new List<string>()
+                };
+                backGroundWorker.ReportProgress(5);
                 var htmlSource = client.DownloadString(url + @"/download");
+
                 var guid = Guid.NewGuid();
 
                 backGroundWorker.ReportProgress(20);
                 //Addon itself
-                client.DownloadFile("https://www.curseforge.com" + addonDownloadRessourceRegex.Match(htmlSource).Value, addonFolderPath + @"\" + guid + ".zip");
-                using (var file = ZipFile.OpenRead(addonFolderPath + @"\" + guid + ".zip"))
+                client.DownloadFile("https://www.curseforge.com" + _addonDownloadRessourceRegex.Match(htmlSource).Value, _addonFolderPath + @"\" + guid + ".zip");
+                using (var file = ZipFile.OpenRead(_addonFolderPath + @"\" + guid + ".zip"))
                 {
                     file.Entries
                                 .Select(x => x.FullName.Split('/')
@@ -96,64 +99,67 @@ namespace AddonMaster.Core.Data
                                                                                .ToList()
                                                                                .ForEach(z =>
                                                                                {
-                                                                                   addon.InstalledDirectories.Add(addonFolderPath + @"\" + z);
+                                                                                   addon.InstalledDirectories.Add(_addonFolderPath + @"\" + z);
 
-                                                                                   if (Directory.Exists(addonFolderPath + @"\" + z))
+                                                                                   if (Directory.Exists(_addonFolderPath + @"\" + z))
                                                                                    {
-                                                                                       Directory.Delete(addonFolderPath + @"\" + z, true);
+                                                                                       Directory.Delete(_addonFolderPath + @"\" + z, true);
                                                                                    }
                                                                                });
 
-                    ZipFile.ExtractToDirectory(addonFolderPath + @"\" + guid + ".zip", addonFolderPath);
+                    ZipFile.ExtractToDirectory(_addonFolderPath + @"\" + guid + ".zip", _addonFolderPath);
                 }
 
-                File.Delete(addonFolderPath + @"\" + guid + ".zip");
+                File.Delete(_addonFolderPath + @"\" + guid + ".zip");
 
-                backGroundWorker.ReportProgress(40);
+                backGroundWorker.ReportProgress(50);
                 //Name
-                addon.Name = addonNameRegex.Match(htmlSource).Groups[1].Value;
+                addon.Name = _addonNameRegex.Match(htmlSource).Groups[1].Value;
 
-                backGroundWorker.ReportProgress(10);
+                backGroundWorker.ReportProgress(5);
                 //Image
-                client.DownloadFile(addonImageRegex.Match(htmlSource).Groups[1].Value.Trim(new char[] { '\\', '\"' }), dbParentPath + guid + ".png");
-                addon.ImagePath = dbParentPath + @"\" + guid + ".png";
+                client.DownloadFile(_addonImageRegex.Match(htmlSource).Groups[1].Value.Trim('\\', '\"'), _dbParentPath + guid + ".png");
+                addon.ImagePath = _dbParentPath + @"\" + guid + ".png";
 
-                backGroundWorker.ReportProgress(10);
+                backGroundWorker.ReportProgress(19);
                 //Description
-                addon.Description = addonDescriptionRegex.Match(htmlSource.Split(new string[] { "Meta Properties" }, StringSplitOptions.None)[1]).Groups[1].Value.Trim(new char[] { '\\', '\"' });
+                addon.Description = _addonDescriptionRegex
+                    .Match(htmlSource.Split(new[] { "Meta Properties" }, StringSplitOptions.None)[1]).Groups[1].Value
+                    .Trim('\\', '\"');
 
-                backGroundWorker.ReportProgress(10);
                 //Patch
-                addon.Patch = addonPatchRegex.Match(htmlSource).Groups[1].Value.Trim(new char[] { '\\', '\"' });
+                addon.Patch = _addonPatchRegex.Match(htmlSource).Groups[1].Value.Trim('\\', '\"');
+
+                //Write addon to xml file
+                List<Addon> currentAddons;
+
+                using (var stream = File.Open(_dbPath, FileMode.Open))
+                {
+                    currentAddons = GetAddons(stream);
+                    File.Delete(currentAddons.First(x => x.Name == addon.Name).ImagePath);
+                    currentAddons.RemoveAll(x => x.Name == addon.Name); //in case addon is downloaded twice
+
+                    currentAddons.Add(addon);
+                }
+
+                File.WriteAllText(_dbPath, string.Empty);
+                using (var stream = File.Open(_dbPath, FileMode.Open))
+                {
+                    _serializer.Serialize(stream, currentAddons);
+                }
+
+                backGroundWorker.ReportProgress(1);
             }
-
-            List<Addon> currentAddons;
-
-            using (var stream = File.Open(dbPath, FileMode.Open))
-            {
-                currentAddons = GetAddons(stream);
-                currentAddons.RemoveAll(x => x.Name == addon.Name); //in case addon is downloaded twice ;)
-
-                currentAddons.Add(addon);
-            }
-
-            File.WriteAllText(dbPath, string.Empty);
-            using (var stream = File.Open(dbPath, FileMode.Open))
-            {
-                serializer.Serialize(stream, currentAddons);
-            }
-
-            backGroundWorker.ReportProgress(5);
         }
 
         public void RemoveAddon(long id)
         {
             List<Addon> listToWrite;
-            using (var stream = File.Open(dbPath, FileMode.Open))
+            using (var stream = File.Open(_dbPath, FileMode.Open))
             {
                 var currentList = GetAddons(stream);
-                var currentAddon = currentList.Where(x => x.ID == id).First();
-                currentList.RemoveAll(x => x.ID == id);
+                var currentAddon = currentList.First(x => x.Id == id);
+                currentList.RemoveAll(x => x.Id == id);
                 listToWrite = currentList;
 
                 currentAddon.InstalledDirectories
@@ -166,11 +172,11 @@ namespace AddonMaster.Core.Data
                                                 });
             }
 
-            File.WriteAllText(dbPath, string.Empty);
+            File.WriteAllText(_dbPath, string.Empty);
 
-            using (var stream = File.Open(dbPath, FileMode.Open))
+            using (var stream = File.Open(_dbPath, FileMode.Open))
             {
-                serializer.Serialize(stream, listToWrite);
+                _serializer.Serialize(stream, listToWrite);
             }
         }
     }

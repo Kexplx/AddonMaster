@@ -6,7 +6,7 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-                      BorderBrush="Gray"
+                      BorderBrush="LightGray"
                       Background="LightGray"
                       BorderThickness="1"
                       TitleForeground="LightGray" WindowStyle="None"

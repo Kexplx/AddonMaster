@@ -1,9 +1,8 @@
 ﻿using AddonMaster.Core.Data;
-using System.Windows;
 
 namespace AddonMaster.GUI
 {
-    public partial class App : Application
+    public partial class App
     {
         public App()
         {

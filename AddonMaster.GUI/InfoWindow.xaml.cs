@@ -1,31 +1,30 @@
 ﻿using MahApps.Metro.Controls;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AddonMaster.GUI
 {
-    public partial class InfoWindow : MetroWindow
+    public partial class InfoWindow
     {
         public InfoWindow(MetroWindow window)
         {
             InitializeComponent();
             switch (window)
             {
-                case MainWindow x:
+                case MainWindow _:
                     txtMainWindow.Visibility = Visibility.Visible;
                     break;
 
-                case SetupWindow x:
+                case SetupWindow _:
                     txtSetupWindow.Visibility = Visibility.Visible;
                     break;
 
-                case AddAddonWindow x:
+                case AddAddonWindow _:
                     txtAddAddonWindow.Visibility = Visibility.Visible;
                     break;
 
-                case ReportWindow x:
+                case ReportWindow _:
                     txtReportWindow.Visibility = Visibility.Visible;
                     break;
             }
@@ -42,11 +41,11 @@ namespace AddonMaster.GUI
 
         private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((sender as Image).ToolTip as string == "Close")
+            if ((sender as Image)?.ToolTip as string == "Close")
             {
                 Close();
             }
-            else if ((sender as Image).ToolTip as string == "Minimize")
+            else if ((sender as Image)?.ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
             }

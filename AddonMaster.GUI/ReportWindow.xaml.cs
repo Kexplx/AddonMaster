@@ -1,5 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
@@ -9,7 +8,7 @@ using System.Windows.Input;
 
 namespace AddonMaster.GUI
 {
-    public partial class ReportWindow : MetroWindow
+    public partial class ReportWindow
     {
         public ReportWindow()
         {
@@ -20,9 +19,9 @@ namespace AddonMaster.GUI
         {
             var worker = new BackgroundWorker { WorkerReportsProgress = true };
 
-            worker.DoWork += (object x, DoWorkEventArgs y) =>
+            worker.DoWork += (x, y) =>
             {
-                (x as BackgroundWorker).ReportProgress(0);
+                (x as BackgroundWorker)?.ReportProgress(0);
                 var client = new SmtpClient
                 {
                     Port = 25,
@@ -34,7 +33,7 @@ namespace AddonMaster.GUI
 
                 var mail = new MailMessage("addonmaster404@gmail.com", "oscar.rosner@web.de");
 
-                if ((y.Argument as Tuple<bool?, string>).Item1 ?? false)
+                if (((Tuple<bool?, string>) y.Argument).Item1 ?? false)
                 {
                     mail.Subject = "AddonMaster: Bug Report";
                 }
@@ -43,14 +42,19 @@ namespace AddonMaster.GUI
                     mail.Subject = "AddonMaster: General Feedback";
                 }
 
-                mail.Body = (y.Argument as Tuple<bool?, string>).Item2;
+                mail.Body = ((Tuple<bool?, string>) y.Argument).Item2 ?? throw new InvalidOperationException();
                 client.Send(mail);
             };
 
-            worker.ProgressChanged += (object x, ProgressChangedEventArgs y) => spinner.Visibility = Visibility.Visible;
-            worker.RunWorkerCompleted += (object x, RunWorkerCompletedEventArgs y) => { spinner.Visibility = Visibility.Collapsed; txtContent.Text = string.Empty; Keyboard.ClearFocus(); };
+            worker.ProgressChanged += (x, y) => Spinner.Visibility = Visibility.Visible;
+            worker.RunWorkerCompleted += (x, y) =>
+            {
+                Spinner.Visibility = Visibility.Collapsed;
+                TxtContent.Text = string.Empty;
+                Keyboard.ClearFocus();
+            };
 
-            worker.RunWorkerAsync(Tuple.Create(checkboxBug.IsChecked, txtContent.Text));
+            worker.RunWorkerAsync(Tuple.Create(CheckboxBug.IsChecked, TxtContent.Text));
         }
         #region UI
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -63,20 +67,23 @@ namespace AddonMaster.GUI
                     DragMove();
                 }
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if ((sender as Image).ToolTip as string == "Close")
+            if ((sender as Image)?.ToolTip as string == "Close")
             {
                 Close();
             }
-            else if ((sender as Image).ToolTip as string == "Minimize")
+            else if ((sender as Image)?.ToolTip as string == "Minimize")
             {
                 WindowState = WindowState.Minimized;
             }
-            else if ((sender as Image).ToolTip as string == "Help")
+            else if ((sender as Image)?.ToolTip as string == "Help")
             {
                 new InfoWindow(this)
                 {

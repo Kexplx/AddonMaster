@@ -136,8 +136,15 @@ namespace AddonMaster.Core.Data
                 using (var stream = File.Open(_dbPath, FileMode.Open))
                 {
                     currentAddons = GetAddons(stream);
-                    File.Delete(currentAddons.First(x => x.Name == addon.Name).ImagePath);
-                    currentAddons.RemoveAll(x => x.Name == addon.Name); //in case addon is downloaded twice
+                    try
+                    {
+                        File.Delete(currentAddons.First(x => x.Name == addon.Name).ImagePath);
+                        currentAddons.RemoveAll(x => x.Name == addon.Name); //in case addon is downloaded twice
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
 
                     currentAddons.Add(addon);
                 }

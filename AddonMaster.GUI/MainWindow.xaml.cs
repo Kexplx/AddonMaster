@@ -2,11 +2,13 @@
 using AddonMaster.GUI.ViewModels;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Configuration;
 
 namespace AddonMaster.GUI
 {
@@ -17,10 +19,15 @@ namespace AddonMaster.GUI
         public MainWindow(string addonFolderPath)
         {
             InitializeComponent();
-
             _dbManager = new DatabaseManager(addonFolderPath);
 
             UpdateListBoxOnMainWindow();
+        }
+
+        public void CheckForVersionUpdates()
+        {
+            var currentVersion = ConfigurationManager.AppSettings["version"];
+
         }
 
         private void imgAdd_MouseDown(object sender, MouseButtonEventArgs e)
@@ -128,6 +135,11 @@ namespace AddonMaster.GUI
                     Owner = this
                 }.Show();
             }
+        }
+
+        private void ImageAwesome_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start(_dbManager.AddonFolderPath);
         }
     }
 }

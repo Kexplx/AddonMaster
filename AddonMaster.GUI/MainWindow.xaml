@@ -22,7 +22,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid  Height="500" Width="400" Background="White">
+    <Grid  Height="700" Width="400" Background="White">
         <ListBox x:Name="LblAddonList" ItemContainerStyle="{StaticResource ListBoxtemStyleNoHighlighting}" HorizontalContentAlignment="Stretch" Margin="0,34,0,40" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -38,7 +38,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Height="30" Grid.Column="0" MouseDown="Window_MouseDown" Source="{Binding Image}" ToolTip="{Binding Description}"/>
                             <Label Grid.Column="1"/>
-                            <TextBlock VerticalAlignment="Top" MouseDown="Window_MouseDown" Foreground="Black" Grid.Column="2" Text="{Binding Name}" />
+                            <TextBlock VerticalAlignment="Top" MouseDown="Window_MouseDown" Foreground="Black" Grid.Column="2" Text="{Binding Name}" ToolTip="{Binding Description}" />
                             <TextBlock VerticalAlignment="Bottom" Foreground="Gray" FontSize="11" MouseDown="Window_MouseDown" Grid.Column="2" Text="{Binding Patch}" />
                             <fa:ImageAwesome Icon="Refresh" x:Name="imgUpdate" ToolTip="Update addon" Grid.Column="4" Cursor="Hand" Foreground="SteelBlue" Height="22" MouseDown="imgUpdate_MouseDown"/>
                             <fa:ImageAwesome Icon="MinusCircle" x:Name="imgRemove" ToolTip="Remove addon" Grid.Column="5" Foreground="IndianRed" Cursor="Hand" Height="24" MouseDown="imgRemove_MouseDown"/>
@@ -47,13 +47,14 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <fa:ImageAwesome Icon="PlusCircle" ToolTip="Install an addon" Cursor="Hand" x:Name="ImgAdd" MouseDown="imgAdd_MouseDown" Margin="364,464,5,5" Foreground="SteelBlue"/>
-        <Label HorizontalContentAlignment="Center" x:Name="LblEmptyList" Content="Use the blue button to install an addon" Foreground="Gray" FontSize="20" Margin="11,200,10,262"/>
+        <fa:ImageAwesome Icon="PlusCircle" ToolTip="Install an addon" Cursor="Hand" x:Name="ImgAdd" MouseDown="imgAdd_MouseDown" Margin="364,663,5,2" Foreground="SteelBlue"/>
+        <Label HorizontalContentAlignment="Center" x:Name="LblEmptyList" Content="Use the blue button to install an addon" Foreground="Gray" FontSize="20" Margin="11,290,10,262"/>
         <fa:ImageAwesome Icon="Cog" x:Name="Spinner" Visibility="Collapsed" Foreground="DimGray" Spin="True" SpinDuration="2" Margin="324,466,35,5"/>
-        <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,464,364,5" Foreground="Gray"/>
-        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="371,5,5,469" Foreground="Gray"/>
-        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="341,5,35,469" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="312,5,64,469" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,663,364,2" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="371,5,5,671" Foreground="Gray"/>
+        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="341,5,35,671" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
+        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="312,5,64,671" Foreground="Gray"/>
         <Label Content="Addon Master" Foreground="DimGray" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <fa:ImageAwesome Icon="FolderOpen" ToolTip="Open your Addon directory" Cursor="Hand" MouseDown="ImageAwesome_MouseDown_1" Margin="46,662,320,-2" Foreground="Gray"/>
     </Grid>
 </controls:MetroWindow>

@@ -25,14 +25,19 @@ namespace AddonMaster.Core.Data
         private readonly XmlSerializer _serializer;
         private readonly string _dbPath;
         private readonly string _dbParentPath;
-        private readonly string _addonFolderPath;
+
+        public string AddonFolderPath
+        {
+            get;
+            set;
+        }
 
         public DatabaseManager(string addonFolderPath)
         {
             _serializer = new XmlSerializer(typeof(List<Addon>));
             _dbPath = addonFolderPath + @"\AddonMaster\addonMasterDB.xml";
             _dbParentPath = addonFolderPath + @"\AddonMaster\";
-            _addonFolderPath = addonFolderPath;
+            AddonFolderPath = addonFolderPath;
 
             if (!File.Exists(_dbPath))
             {
@@ -89,8 +94,8 @@ namespace AddonMaster.Core.Data
 
                 backGroundWorker.ReportProgress(20);
                 //Addon itself
-                client.DownloadFile("https://www.curseforge.com" + _addonDownloadRessourceRegex.Match(htmlSource).Value, _addonFolderPath + @"\" + guid + ".zip");
-                using (var file = ZipFile.OpenRead(_addonFolderPath + @"\" + guid + ".zip"))
+                client.DownloadFile("https://www.curseforge.com" + _addonDownloadRessourceRegex.Match(htmlSource).Value, AddonFolderPath + @"\" + guid + ".zip");
+                using (var file = ZipFile.OpenRead(AddonFolderPath + @"\" + guid + ".zip"))
                 {
                     file.Entries
                                 .Select(x => x.FullName.Split('/')
@@ -99,18 +104,18 @@ namespace AddonMaster.Core.Data
                                                                                .ToList()
                                                                                .ForEach(z =>
                                                                                {
-                                                                                   addon.InstalledDirectories.Add(_addonFolderPath + @"\" + z);
+                                                                                   addon.InstalledDirectories.Add(AddonFolderPath + @"\" + z);
 
-                                                                                   if (Directory.Exists(_addonFolderPath + @"\" + z))
+                                                                                   if (Directory.Exists(AddonFolderPath + @"\" + z))
                                                                                    {
-                                                                                       Directory.Delete(_addonFolderPath + @"\" + z, true);
+                                                                                       Directory.Delete(AddonFolderPath + @"\" + z, true);
                                                                                    }
                                                                                });
 
-                    ZipFile.ExtractToDirectory(_addonFolderPath + @"\" + guid + ".zip", _addonFolderPath);
+                    ZipFile.ExtractToDirectory(AddonFolderPath + @"\" + guid + ".zip", AddonFolderPath);
                 }
 
-                File.Delete(_addonFolderPath + @"\" + guid + ".zip");
+                File.Delete(AddonFolderPath + @"\" + guid + ".zip");
 
                 backGroundWorker.ReportProgress(50);
                 //Name

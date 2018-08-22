@@ -19,6 +19,7 @@ namespace AddonMaster.GUI
         public AddAddonWindow(MainWindow mainWindow, DatabaseManager dbManager)
         {
             InitializeComponent();
+
             _dbManager = dbManager;
             _mainWindow = mainWindow;
         }

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Configuration;
 
 namespace AddonMaster.GUI
 {
@@ -19,8 +18,8 @@ namespace AddonMaster.GUI
         public MainWindow(string addonFolderPath)
         {
             InitializeComponent();
-            _dbManager = new DatabaseManager(addonFolderPath);
 
+            _dbManager = new DatabaseManager(addonFolderPath);
             UpdateListBoxOnMainWindow();
         }
 
@@ -48,7 +47,7 @@ namespace AddonMaster.GUI
 
             worker.ProgressChanged += (x, y) =>
             {
-                if (addonViewModel.UpdateCogVisibility != Visibility.Visible)
+                if (addonViewModel != null && addonViewModel.UpdateCogVisibility != Visibility.Visible)
                 {
                     addonViewModel.UpdateCogVisibility = Visibility.Visible;
                     LblAddonList.Items.Refresh();
@@ -58,7 +57,7 @@ namespace AddonMaster.GUI
             worker.RunWorkerCompleted += (o, args) =>
             {
                 if (addonViewModel != null) File.Delete(addonViewModel.Addon.ImagePath);
-                addonViewModel.UpdateCogVisibility = Visibility.Collapsed;
+                if (addonViewModel != null) addonViewModel.UpdateCogVisibility = Visibility.Collapsed;
                 UpdateListBoxOnMainWindow();
             };
 

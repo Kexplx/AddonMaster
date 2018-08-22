@@ -28,7 +28,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Background="LightGray" HorizontalAlignment="Left" Margin="0,665,0,0" VerticalAlignment="Top" Height="35" Width="400" Grid.RowSpan="2"/>
-        <ListBox x:Name="LblAddonList" ItemContainerStyle="{StaticResource ListBoxtemStyleNoHighlighting}" HorizontalContentAlignment="Stretch" Margin="0,34,0,10" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
+        <ListBox Grid.Row="0" x:Name="LblAddonList" ItemContainerStyle="{StaticResource ListBoxtemStyleNoHighlighting}" HorizontalContentAlignment="Stretch" Margin="0,34,0,10" BorderBrush="DarkGray" BorderThickness="0,1,0,1" Background="Transparent">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="LightGray" Margin="2,3,2,0" BorderThickness="1">
@@ -54,13 +54,16 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <fa:ImageAwesome Icon="PlusCircle" ToolTip="Install an addon" Cursor="Hand" x:Name="ImgAdd" MouseDown="imgAdd_MouseDown" Margin="364,669,5,3" Foreground="SteelBlue" Grid.RowSpan="2"/>
-        <Label HorizontalContentAlignment="Center" x:Name="LblEmptyList" Content="Use the blue button to install an addon" Foreground="Gray" FontSize="20" Margin="11,290,10,237"/>
-        <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,670,371,2" Foreground="Gray" Grid.RowSpan="2"/>
-        <fa:ImageAwesome Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="371,5,5,646" Foreground="Gray"/>
-        <fa:ImageAwesome Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="341,5,35,646" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
-        <fa:ImageAwesome Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="312,5,64,646" Foreground="Gray"/>
-        <Label Content="Addon Master" Foreground="DimGray" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
-        <fa:ImageAwesome Icon="Folder" ToolTip="Open your Addon directory" Cursor="Hand" MouseDown="ImageAwesome_MouseDown_1" Margin="41,670,333,0" Foreground="Gray" Grid.RowSpan="2"/>
+        <fa:ImageAwesome Icon="PlusCircle" ToolTip="Install an addon" Cursor="Hand" x:Name="ImgAdd" MouseDown="imgAdd_MouseDown" Margin="364,669,5,3" Foreground="SteelBlue"
+                         Grid.Row="0" Grid.RowSpan="2"/>
+        <Label Grid.Row="0" HorizontalContentAlignment="Center" x:Name="LblEmptyList" Content="Use the blue button to install an addon" Foreground="Gray" FontSize="20" Margin="11,290,10,237"/>
+        <fa:ImageAwesome Icon="Bug" ToolTip="Report a bug or give feedback" Cursor="Hand" MouseDown="imgReport_MouseDown" Margin="5,670,371,2" Foreground="Gray"
+                         Grid.Row="0" Grid.RowSpan="2"/>
+        <fa:ImageAwesome Grid.Row="0" Icon="TimesCircle" ToolTip="Close" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="371,5,5,646" Foreground="Gray"/>
+        <fa:ImageAwesome Grid.Row="0" Icon="MinusCircle" ToolTip="Minimize" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="341,5,35,646" Foreground="Gray" RenderTransformOrigin="1.66,0.85"/>
+        <fa:ImageAwesome Grid.Row="0" Icon="QuestionCircle" ToolTip="Help" Opacity="1" Cursor="Hand" MouseDown="ImageAwesome_MouseDown" Margin="312,5,64,646" Foreground="Gray"/>
+        <Label Grid.Row="0" Content="Addon Master" Foreground="DimGray" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <fa:ImageAwesome Icon="Folder" ToolTip="Open your Addon directory" Cursor="Hand" MouseDown="ImageAwesome_MouseDown_1" Margin="41,670,333,0" Foreground="Gray"
+                         Grid.Row="0" Grid.RowSpan="2"/>
     </Grid>
 </controls:MetroWindow>

@@ -24,15 +24,9 @@ namespace AddonMaster.GUI
             UpdateListBoxOnMainWindow();
         }
 
-        public void CheckForVersionUpdates()
-        {
-            var currentVersion = ConfigurationManager.AppSettings["version"];
-
-        }
-
         private void imgAdd_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var addonWindow = new AddAddonWindow(this, _dbManager) {Owner = this};
+            var addonWindow = new AddAddonWindow(this, _dbManager) { Owner = this };
             addonWindow.Show();
         }
 
@@ -40,7 +34,7 @@ namespace AddonMaster.GUI
         {
             var addonViewModel = (sender as Image)?.DataContext as AddonViewModel;
 
-            var worker = new BackgroundWorker {WorkerReportsProgress = true};
+            var worker = new BackgroundWorker { WorkerReportsProgress = true };
 
             worker.DoWork += (x, y) =>
             {
@@ -52,13 +46,20 @@ namespace AddonMaster.GUI
                 }
             };
 
-            worker.ProgressChanged += (x, y) => Spinner.Visibility = Visibility.Visible;
+            worker.ProgressChanged += (x, y) =>
+            {
+                if (addonViewModel.UpdateCogVisibility != Visibility.Visible)
+                {
+                    addonViewModel.UpdateCogVisibility = Visibility.Visible;
+                    LblAddonList.Items.Refresh();
+                }
+            };
 
             worker.RunWorkerCompleted += (o, args) =>
             {
                 if (addonViewModel != null) File.Delete(addonViewModel.Addon.ImagePath);
+                addonViewModel.UpdateCogVisibility = Visibility.Collapsed;
                 UpdateListBoxOnMainWindow();
-                Spinner.Visibility = Visibility.Collapsed;
             };
 
             worker.RunWorkerAsync();
@@ -68,7 +69,7 @@ namespace AddonMaster.GUI
         {
             var addonViewModel = (sender as Image)?.DataContext as AddonViewModel;
 
-            var worker = new BackgroundWorker {WorkerReportsProgress = true};
+            var worker = new BackgroundWorker { WorkerReportsProgress = true };
 
             worker.DoWork += (x, y) =>
             {
@@ -99,7 +100,7 @@ namespace AddonMaster.GUI
 
         private void imgReport_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var reportWindow = new ReportWindow {Owner = this};
+            var reportWindow = new ReportWindow { Owner = this };
             reportWindow.Show();
         }
 

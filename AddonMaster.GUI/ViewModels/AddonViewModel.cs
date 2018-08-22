@@ -1,5 +1,6 @@
 ﻿using AddonMaster.Core.Data.Entities;
 using System.IO;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace AddonMaster.GUI.ViewModels
@@ -32,28 +33,10 @@ namespace AddonMaster.GUI.ViewModels
             }
         }
 
-        public string Name
+        public Visibility UpdateCogVisibility
         {
-            get
-            {
-                return Addon.Name;
-            }
-        }
-
-        public string Patch
-        {
-            get
-            {
-                return Addon.Patch;
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return Addon.Description;
-            }
-        }
+            get;
+            set;
+        } = Visibility.Collapsed;
     }
 }
